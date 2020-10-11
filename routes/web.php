@@ -17,9 +17,7 @@ use App\Http\Controllers\DisburshmentController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 Route::get('/list', function () {
     return view('user.index');
 });
@@ -29,9 +27,10 @@ Route::get('/list', function () {
 
 
  Route::group(['middleware' => 'shareholder'], function () {
-        Route::get('/dashboard',function(){
-            return view('dashboard.dashboard');
-        });
+    Route::get('/', function () {
+        return view('dashboard.dashboard');
+    });
+       
 
         //project
         Route::get('/index', [ProjectController::class, 'index'])->name('project.index');
@@ -51,7 +50,7 @@ Route::get('/list', function () {
 
 
       });
-      
+
         Auth::routes();
 
         Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

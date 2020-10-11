@@ -48,11 +48,22 @@
             <!-- profile-dropdown-->
             <ul class="dropdown-content" id="profile-dropdown">
               <li><a class="grey-text text-darken-1" href="user-profile-page.html"><i class="material-icons">person_outline</i> Profile</a></li>
-              <li><a class="grey-text text-darken-1" href="app-chat.html"><i class="material-icons">chat_bubble_outline</i> Chat</a></li>
-              <li><a class="grey-text text-darken-1" href="page-faq.html"><i class="material-icons">help_outline</i> Help</a></li>
-              <li class="divider"></li>
-              <li><a class="grey-text text-darken-1" href="user-lock-screen.html"><i class="material-icons">lock_outline</i> Lock</a></li>
-              <li><a class="grey-text text-darken-1" href="user-login.html"><i class="material-icons">keyboard_tab</i> Logout</a></li>
+              {{--  <li><a class="grey-text text-darken-1" href="app-chat.html"><i class="material-icons">chat_bubble_outline</i> Chat</a></li>  --}}
+              {{--  <li><a class="grey-text text-darken-1" href="page-faq.html"><i class="material-icons">help_outline</i> Help</a></li>  --}}
+              {{--  <li class="divider"></li>  --}}
+              {{--  <li><a class="grey-text text-darken-1" href="user-lock-screen.html"><i class="material-icons">lock_outline</i> Lock</a></li>  --}}
+              <li>
+                {{--  <a class="grey-text text-darken-1" href="{{ url('/logout') }}"><i class="material-icons">keyboard_tab</i> Logout</a>  --}}
+                <a class="grey-text text-darken-1" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();"><i class="material-icons">keyboard_tab</i>
+                 {{ __('Logout') }}
+             </a>
+
+             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                 @csrf
+             </form>
+              </li>
             </ul>
           </div>
           <nav class="display-none search-sm">
