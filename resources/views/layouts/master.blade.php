@@ -14,7 +14,6 @@ Personal Website : http://jobayertuser.tk
     <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google.">
     <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template, eCommerce dashboard, analytic dashboard">
     <meta name="author" content="">
-    <meta name="author" content="Jobayer Al Mahmud">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{config('app.name', 'Project Tracker')}}</title>
     <link rel="apple-touch-icon" href="{{asset('images/favicon/apple-touch-icon-152x152.png')}}">
@@ -41,6 +40,7 @@ Personal Website : http://jobayertuser.tk
     <link rel="stylesheet" type="text/css" href="{{asset('css/themes/vertical-modern-menu-template/style.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/pages/data-tables.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/pages/page-users.min.css')}}">
+
     
     
     
