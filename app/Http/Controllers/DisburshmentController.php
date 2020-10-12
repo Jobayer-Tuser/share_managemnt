@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Disburshment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,15 +11,18 @@ class DisburshmentController extends Controller
 {
     public function index()
     {
-        $data['title']="List of Disburshment";
-        $data['disburshments']=Disburshment::all();
-        return view('disburshment.index',$data);
+         $data['title']="List of Disburshment";
+         $data['disburshments']=Disburshment::all();
+        
+         return view('disburshment.index',$data);
+        // return "hello";
     }
     public function create()
     {
         // $user=isset(Auth::user()->id);
         // return $user;
-        return view('disburshment.create');
+        $data['shareholders']=User::all();
+        return view('disburshment.create',$data);
     }
 
     public function store(Request $request)
@@ -28,15 +32,11 @@ class DisburshmentController extends Controller
             
         ]);
         $disburshment= new Disburshment();
-        $disburshment->shareholder_id=isset(Auth::user()->id);
+        $disburshment->shareholder_id=$request->shareholder_id;
         $disburshment->amount=$request->amount;
         $disburshment->date=$request->date;
         $disburshment->save();
         return redirect()->route('disburshment.create');
         
-        // $user=isset(Auth::user()->id);
-        // return $user;
-        
-        return view('disburshment.create');
     }
 }

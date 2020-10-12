@@ -54,38 +54,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                          {{-- @if(count($clients) > 0)
-                              @foreach($clients AS $eachClient)
-                                <tr>
-                                  <td>{{$n++}}</td>
-                                  <td>{{$n++}}</td>
-                                  <td>
-                                  {{$eachClient['client_name']}}<a href="page-users-view.html"></a>
-                                  </td>
-                                  <td>{{$eachClient['client_type']}}</td>
-                                  <td>{{$eachClient['client_status']}}</td>
-                                  <td>
-                                      <span class="chip green lighten-5">
-                                          {{$eachClient['created_by']}}<span class="green-text"></span>
-                                      </span>
-                                  </td>
-                                  <td>
-                                    <span class="chip green lighten-5">
-                                        <span class="green-text">Active</span>
-                                    </span>
-                                  </td>
-                                  <td><a href=""><i class="material-icons">remove_red_eye</i></a></td>
-
-                                  <td><a href="{{route('clients.edit', $eachClient['id'])}}"><i class="material-icons">edit</i></a></td>
-
-                                  <td><a data-id="{{$eachClient['id']}}" class="waves-effect waves-light modal-trigger mb-2 mr-1 delete-client" href="#delete-modal"><i class="material-icons">delete</i></a></td>
-
-                                  <td>{{$eachClient['client_phone']}}</td>
-                                  <td>{{$eachClient['client_email']}}</td>
-                                  <td>{{$eachClient['client_address']}}</td>
-                                </tr>
-                              @endforeach
-                            @endif --}}
+                          
 
                             @foreach ($disburshments as $disburshment)
                             <tr>
@@ -99,16 +68,7 @@
                    
 
                     </tbody>
-                  <tfoot>
-                  <tr>
-                    
-                    <th>id</th>
-                    <th>User Name</th>
-                    <th>Email</th>
-                    <th>Share</th>
-                    <th>Action</th>
-                  </tr>
-                  </tfoot>
+
                 </table>
               </div>
               <!-- /.card-body -->
