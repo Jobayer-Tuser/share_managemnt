@@ -43,7 +43,8 @@
                     <th>id</th>
                     <th>User Name</th>
                     <th>Email</th>
-                    <th>Share</th>
+                    <th>Total Share</th>
+                    <th>Out of Share</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -54,24 +55,19 @@
                       <td>{{$user->id}}</td>
                       <td>{{$user->name}}</td>
                       <td>{{$user->email}}</td>
+                      <td>{{$user->total_share}}</td>
                       <td>{{$user->share}}</td>
+                      <td><a href="{{route('user.edit',$user->id)}}" class="btn btn-warning">Edit</a> <a href="#" class="btn btn-danger">Delete</a></td>
                       
-                      <td>A</td>
+                      
+                      
                   </tr>
                     @endforeach
                   
 
 
                   </tbody>
-                  <tfoot>
-                  <tr>
-                    <th>id</th>
-                    <th>User Name</th>
-                    <th>Email</th>
-                    <th>Share</th>
-                    <th>Action</th>
-                  </tr>
-                  </tfoot>
+
                 </table>
               </div>
               <!-- /.card-body -->

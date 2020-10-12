@@ -11,10 +11,11 @@ class DisburshmentController extends Controller
 {
     public function index()
     {
-        $data['title']="List of Disburshment";
-        $data['disburshments']=Disburshment::all();
+         $data['title']="List of Disburshment";
+         $data['disburshments']=Disburshment::all();
         
-        return view('disburshment.index',$data);
+         return view('disburshment.index',$data);
+        // return "hello";
     }
     public function create()
     {

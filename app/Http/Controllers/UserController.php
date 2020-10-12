@@ -33,9 +33,23 @@ class UserController extends Controller
         $user= new User();
         $user->name=$request->name;
         $user->share=$request->share;
+        $user->total_share=$request->total_share;
         $user->email=$request->email;
         $user->password=Hash::make($request->password);
         $user->save();
-        return redirect()->route('user.create');
+        return redirect()->route('user.index');
+    }
+
+    public function edit($id)
+    {
+
+        $data['title'] = "Edit Shareholder";
+        $data['data']=User::find($id);
+        return view('user.edit', $data);
+    }
+
+    public function update(Request $request,$id)
+    {
+        return "got yaaa";
     }
 }

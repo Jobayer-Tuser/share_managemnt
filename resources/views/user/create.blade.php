@@ -13,7 +13,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Validation</h1>
+            <h1>Create Shareholder</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -34,7 +34,7 @@
                 <!-- jquery validation -->
                     <div class="card card-primary">
                       <div class="card-header">
-                        <h3 class="card-title">Create Shareholder</h3>
+                        <h3 class="card-title"></h3>
                       </div>
                       <!-- /.card-header -->
                       <!-- form start -->
@@ -44,7 +44,7 @@
                         <!-- /.card-body -->
                         <div class="card-footer">
                           <button type="submit" class="btn btn-primary">Submit</button>
-                          <button type="submit" class="btn btn-primary">Cancle</button>
+                          <a href="{{route('user.index')}}" class="btn btn-danger">Cancel</a>
                         </div>
                       </form>
                     </div>

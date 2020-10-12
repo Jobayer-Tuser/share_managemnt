@@ -2,59 +2,57 @@
 
 @section('content')
 
-{{$errors}}
+@push('css')
 
-        <div class="breadcrumbs-dark pb-0 pt-4" id="breadcrumbs-wrapper">
-          <!-- Search for small screen-->
-          <div class="container">
+
+@endpush
+
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Edit Shareholder</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Validation</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
             <div class="row">
-              <div class="col s10 m6 l6">
-                <h5 class="breadcrumbs-title mt-0 mb-0"><span>Users View</span></h5>
-                <ol class="breadcrumbs mb-0">
-                  <li class="breadcrumb-item"><a href="index-2.html">Home</a>
-                  </li>
-                  <li class="breadcrumb-item"><a href="#">User</a>
-                  </li>
-                  <li class="breadcrumb-item active">Users View
-                  </li>
-                </ol>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-<!-- Icon Prefixes -->
-<div class="row">
-  <div class="col s12">
-    <div id="icon-prefixes" class="card card-tabs">
-      <div class="card-content">
-        <div class="card-title">
-          <div class="row">
-            <div class="col s12 m6 l10">
-              <h4 class="card-title">Edit Client</h4>
-            </div>
-          </div>
-        </div>
-        <div id="view-icon-prefixes">
-          <div class="row">
-          
-            <form class="col s12" method="post" action="{{route('clients.update', $clients['id'])}}">
-                @csrf
-                {{method_field('patch')}}
-                <!-- {{@csrf_field()}}-->
-                @include('clients._form')
-              
-                <div class="col s12 display-flex justify-content-end mt-3">
-                    <button type="submit" class="btn indigo">Save</button> &nbsp;
-                    <a href="{{route('clients.index')}}" type="button" class="btn btn-light">Cancel</a>
+                <!-- left column -->
+                <div class="col-md-12">
+                <!-- jquery validation -->
+                    <div class="card card-primary">
+                      <div class="card-header">
+                        <h3 class="card-title"></h3>
+                      </div>
+                      <!-- /.card-header -->
+                      <!-- form start -->
+                      <form role="form" method="POST" action="{{ route('user.update',$data->id) }}" id="quickForm">
+                        @csrf
+                        @include('user._form')
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                          <button type="submit" class="btn btn-primary">Edit</button>
+                          <a href="{{route('user.index')}}" class="btn btn-danger">Cancel</a>
+                        </div>
+                      </form>
+                    </div>
+                    <!-- /.card -->
                 </div>
-            </form>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
 
 @endsection

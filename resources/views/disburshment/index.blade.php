@@ -68,16 +68,7 @@
                    
 
                     </tbody>
-                  <tfoot>
-                  <tr>
-                    
-                    <th>id</th>
-                    <th>User Name</th>
-                    <th>Email</th>
-                    <th>Share</th>
-                    <th>Action</th>
-                  </tr>
-                  </tfoot>
+
                 </table>
               </div>
               <!-- /.card-body -->

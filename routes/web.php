@@ -40,6 +40,8 @@ Route::get('/list', function () {
         Route::get('/user/index', [UserController::class, 'index'])->name('user.index');
         Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
         Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
+        Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
+        Route::post('/user/update/{id}', [UserController::class, 'update'])->name('user.update');
 
         //financial
         Route::get('/financial/index', [FinancialController::class, 'index'])->name('financial.index');
@@ -53,6 +55,7 @@ Route::get('/list', function () {
 
       });
 
-        Auth::routes();
+        //Auth::routes();
+        Auth::routes(['register' => false]); //disable register route.['except' => 'logout']
 
         Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
