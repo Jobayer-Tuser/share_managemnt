@@ -2,59 +2,63 @@
 
 @section('content')
 
+@push('css')
+
+
+@endpush
+
 {{$errors}}
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Validation</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Validation</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
 
-
-
-        <div class="breadcrumbs-dark pb-0 pt-4" id="breadcrumbs-wrapper">
-          <!-- Search for small screen-->
-          <div class="container">
-            <div class="row">
-              <div class="col s10 m6 l6">
-                <h5 class="breadcrumbs-title mt-0 mb-0"><span>Users View</span></h5>
-                <ol class="breadcrumbs mb-0">
-                  <li class="breadcrumb-item"><a href="index-2.html">Home</a>
-                  </li>
-                  <li class="breadcrumb-item"><a href="#">User</a>
-                  </li>
-                  <li class="breadcrumb-item active">Users View
-                  </li>
-                </ol>
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- jquery validation -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Quick Example <small>jQuery Validation</small></h3>
               </div>
-            </div>
-          </div>
-        </div>
-        
-<!-- Icon Prefixes -->
-<div class="row">
-  <div class="col s12">
-    <div id="icon-prefixes" class="card card-tabs">
-      <div class="card-content">
-        <div class="card-title">
-          <div class="row">
-            <div class="col s12 m6 l10">
-              <h4 class="card-title">Create New Client</h4>
-            </div>
-          </div>
-        </div>
-        <div id="view-icon-prefixes">
-          <div class="row">
-            <form class="col s12" method="post" action="{{route('clients.store')}}">
-             @csrf
-            
-                @include('clients._form')
-              
-                <div class="col s12 display-flex justify-content-end mt-3">
-                    <button type="submit" class="btn indigo">Save</button> &nbsp;
-                    <a href="{{route('clients.index')}}" type="button" class="btn btn-light">Cancel</a>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form role="form" action="{{route('disburshment.store')}}" method="post" id="quickForm">
+                @csrf
+                @include('disburshment._form')
+                <!-- /.card-body -->
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <a href="{{route('disburshment.index')}}" class="btn btn-danger">Back</a>
                 </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+              </form>
+            </div>
+            <!-- /.card -->
+            </div>
+          <!--/.col (left) -->
+          <!-- right column -->
+          <div class="col-md-6">
 
+          </div>
+          <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
 
 @endsection

@@ -103,13 +103,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('user.index')}} " class="nav-link ">
+                <a href="{{route('disburshment.index')}} " class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Disburshment List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href=" {{route('user.create')}} " class="nav-link">
+                <a href=" {{route('disburshment.create')}} " class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Disburshment</p>
                 </a>

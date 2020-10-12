@@ -47,6 +47,7 @@ Route::get('/list', function () {
         //disburshment
         Route::get('/disburshment/index', [DisburshmentController::class, 'index'])->name('disburshment.index');
         Route::get('/disburshment/create', [DisburshmentController::class, 'create'])->name('disburshment.create');
+        Route::post('/disburshment/store', [DisburshmentController::class, 'store'])->name('disburshment.store');
 
 
       });
