@@ -1,9 +1,9 @@
-<!-- BEGIN: Footer-->
-
-<footer class="page-footer footer footer-static footer-dark gradient-45deg-indigo-purple gradient-shadow navbar-border navbar-shadow">
-    <div class="footer-copyright">
-    <div class="container"><span>&copy; <?= date('Y');?> <a href="" target="_blank">ADN Digital</a> All rights reserved.</span></div>
+ <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="float-right d-none d-sm-inline">
+      Anything you want
     </div>
-</footer>
-
-<!-- END: Footer-->
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+  </footer>

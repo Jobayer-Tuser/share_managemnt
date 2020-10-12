@@ -29,8 +29,8 @@ Route::get('/list', function () {
  Route::group(['middleware' => 'shareholder'], function () {
     Route::get('/', function () {
         return view('dashboard.dashboard');
-    });
-       
+    })->name('dashboard.dashboard');
+
 
         //project
         Route::get('/index', [ProjectController::class, 'index'])->name('project.index');
@@ -44,7 +44,7 @@ Route::get('/list', function () {
         Route::get('/financial/index', [FinancialController::class, 'index'])->name('financial.index');
         Route::get('/financial/create', [FinancialController::class, 'create'])->name('financial.create');
 
-        //disburshment 
+        //disburshment
         Route::get('/disburshment/index', [DisburshmentController::class, 'index'])->name('disburshment.index');
         Route::get('/disburshment/create', [DisburshmentController::class, 'create'])->name('disburshment.create');
 
