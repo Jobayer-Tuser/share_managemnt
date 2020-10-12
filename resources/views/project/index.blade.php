@@ -30,90 +30,42 @@
     <section class="content">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
+                <h3 class="card-title">{{$title}}</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th></th>
                     <th>id</th>
                     <th>LC/TT Date</th>
                     <th>Style Number & Order Session</th>
                     <th>LC number</th>
                     <th>LC value</th>
                     <th>Forwarded LC value</th>
-                    <th>Total profit</th>
-                    <th>Advanced payment</th>
-                    <th>LC Outstanding payment</th>
-                    <th>LC freight cost settle</th>
-                    <th>Shipement mode & date</th>
-                    <th>Final invoice of manufacturer</th>
-                    <th>Final invoice amount of buyer</th>
-                    <th>Amount recieve date</th>
-                    <th>Profit shared</th>
-                    <th>Account balance</th>
-                    <th>Payment method</th>
-                    <th>Payment date</th>
-                    <th>Profit share outstanding</th>
-                    <th>Created by</th>
-                    <th>Updated by</th>
+                    <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
+                    @if(count($projects) > 0)
+                        @foreach($projects AS $eachProject)
+                          <tr>
+                            <td>{{$eachProject['lc_or_tt_date']}}</td>
+                            <td>{{$eachProject['style_number_and_order_session']}}</td>
+                            <td>{{$eachProject['lc_number']}}</td>
+                            <td>{{$eachProject['lc_value']}}</td>
+                            <td>{{$eachProject['forward_lc_value']}}</td>
+                            <td>{{$eachProject['total_profit_margin']}}</td>
+                            <td>
+                                <a  href=" {{route('project.edit', $eachProject['id'])}} " class="btn btn-warning btn-xs">Edit</a>
+                                <a data-target="{{$eachProject['id']}}" class="btn btn-xs btn-danger" href="">Delete</a>
+                                <a data-target="{{$eachProject['id']}}" class="btn btn-xs btn-danger" href=" {{route('project.show', $eachProject['id'])}}">Details</a>
 
+                            </td>
+                          </tr>
+                        @endforeach
+                    @endif
                   </tbody>
-                  <tfoot>
-                  <tr>
-                    <th></th>
-                    <th>id</th>
-                    <th>LC/TT Date</th>
-                    <th>Style Number & Order Session</th>
-                    <th>LC number</th>
-                    <th>LC value</th>
-                    <th>Forwarded LC value</th>
-                    <th>Total profit</th>
-                    <th>Advanced payment</th>
-                    <th>LC Outstanding payment</th>
-                    <th>LC freight cost settle</th>
-                    <th>Shipement mode & date</th>
-                    <th>Final invoice of manufacturer</th>
-                    <th>Final invoice amount of buyer</th>
-                    <th>Amount recieve date</th>
-                    <th>Profit shared</th>
-                    <th>Account balance</th>
-                    <th>Payment method</th>
-                    <th>Payment date</th>
-                    <th>Profit share outstanding</th>
-                    <th>Created by</th>
-                    <th>Updated by</th>
-                  </tr>
-                  </tfoot>
                 </table>
               </div>
               <!-- /.card-body -->

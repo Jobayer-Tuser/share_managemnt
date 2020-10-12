@@ -90,9 +90,8 @@
                       <td>A</td>
                   </tr>
 
-
                   </tbody>
-                  
+
                 </table>
               </div>
               <!-- /.card-body -->
