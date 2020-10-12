@@ -53,7 +53,7 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Project Management
+                Profit Management
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -61,13 +61,13 @@
               <li class="nav-item">
                 <a href="{{route('project.index')}} " class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Project List</p>
+                  <p>Profit List</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href=" {{route('project.create')}} " class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add Project</p>
+                  <p>Add Profit</p>
                 </a>
               </li>
             </ul>

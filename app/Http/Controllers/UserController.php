@@ -11,4 +11,10 @@ class UserController extends Controller
         $data['title']="List of Shareholders";
         return view('user.index',$data);
     }
+
+    public function create(){
+        $data['title'] = "Create Shareholder";
+
+        return view('user.create', $data);
+    }
 }
