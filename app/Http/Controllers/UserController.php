@@ -35,6 +35,7 @@ class UserController extends Controller
         $user->share=$request->share;
         $user->total_share=$request->total_share;
         $user->email=$request->email;
+        
         $user->password=Hash::make($request->password);
         $user->save();
         return redirect()->route('user.index');
@@ -50,6 +51,23 @@ class UserController extends Controller
 
     public function update(Request $request,$id)
     {
-        return "got yaaa";
+        $request->validate([
+            'name'=>'required|string|unique:users,name,'.$id,
+            'email'=>'required',
+            //'password'=>'required',
+            'share'=>'required|regex:/^\d+(\.\d{1,2})?$/',
+            
+        ]);
+        $user=  User::find($id);
+        $user->name=$request->name;
+        $user->share=$request->share;
+        $user->total_share=$request->total_share;
+        $user->email=$request->email;
+        if(isset($request->password)){
+            $user->password=Hash::make($request->password);
+        }
+       // 
+        $user->save();
+        return redirect()->route('user.edit',$id);
     }
 }
