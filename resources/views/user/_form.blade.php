@@ -1,22 +1,22 @@
 <div class="card-body">
     <div class="row">
   <div class="form-group col-md-6">
-    <label for="">Name</label>
+    <label for="">Name @if ($errors->has('name')) <small class="red-text"> [ {{ $errors->first('name') }} ] </small> @endif</label>
     <input type="text" name="name" class="form-control" id="" placeholder="Enter Name">
   </div>
   <div class="form-group col-md-6">
-    <label for="">Email</label>
+    <label for="">Email @if ($errors->has('email')) <small class="red-text"> [ {{ $errors->first('email') }} ] </small>@endif</label>
     <input type="email" name="email" class="form-control" id="" placeholder="Enter Email">
   </div>
   </div>
 <div class="row">
   <div class="form-group col-md-6">
-    <label for="">Password</label>
+    <label for="">Password @if ($errors->has('password')) <small class="red-text"> [ {{ $errors->first('password') }} ] </small>@endif</label>
     <input type="password" name="password" class="form-control" id="" placeholder="Password">
   </div>
 
   <div class="form-group col-md-6">
-    <label for="">Share</label>
+    <label for="">Share @if ($errors->has('share')) <small class="red-text"> [ {{ $errors->first('share') }} ] </small>@endif</label>
     <input type="text" name="share" class="form-control" id="" placeholder="Share ">
   </div>
  </div>

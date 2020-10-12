@@ -39,6 +39,7 @@ Route::get('/list', function () {
         //user
         Route::get('/user/index', [UserController::class, 'index'])->name('user.index');
         Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
+        Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
 
         //financial
         Route::get('/financial/index', [FinancialController::class, 'index'])->name('financial.index');

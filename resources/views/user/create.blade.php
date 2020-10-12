@@ -7,7 +7,7 @@
 
 @endpush
 
-{{$errors}}
+
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -34,11 +34,12 @@
                 <!-- jquery validation -->
                     <div class="card card-primary">
                       <div class="card-header">
-                        <h3 class="card-title">Quick Example <small>jQuery Validation</small></h3>
+                        <h3 class="card-title">Create Shareholder</h3>
                       </div>
                       <!-- /.card-header -->
                       <!-- form start -->
-                      <form role="form" id="quickForm">
+                      <form role="form" method="POST" action="{{route('user.store')}}" id="quickForm">
+                        @csrf
                         @include('user._form')
                         <!-- /.card-body -->
                         <div class="card-footer">

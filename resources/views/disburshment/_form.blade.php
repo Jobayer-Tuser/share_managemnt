@@ -1,7 +1,7 @@
 <div class="card-body">
     <div class="row">
   <div class="form-group col-md-6">
-    <label for="">Amount</label>
+    <label for="">Amount </label>
     <input type="text" name="amount" class="form-control" id="amount" placeholder="Enter Amount" required>
   </div>
   <div class="form-group col-md-6">
