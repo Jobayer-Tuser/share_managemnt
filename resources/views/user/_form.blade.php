@@ -1,4 +1,40 @@
+<div class="card-body">
+    <div class="row">
+  <div class="form-group col-md-6">
+    <label for="">Name</label>
+    <input type="text" name="name" class="form-control" id="" placeholder="Enter Name">
+  </div>
+  <div class="form-group col-md-6">
+    <label for="">Email</label>
+    <input type="email" name="email" class="form-control" id="" placeholder="Enter Email">
+  </div>
+  </div>
 <div class="row">
+  <div class="form-group col-md-6">
+    <label for="">Password</label>
+    <input type="password" name="password" class="form-control" id="" placeholder="Password">
+  </div>
+
+  <div class="form-group col-md-6">
+    <label for="">Share</label>
+    <input type="text" name="share" class="form-control" id="" placeholder="Share ">
+  </div>
+ </div>
+
+
+</div>
+
+
+@push('script')
+    <script src="{{asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+          bsCustomFileInput.init();
+        });
+    </script>
+@endpush
+
+{{--<div class="row">
     <div class="input-field col s6">
         <i class="material-icons prefix">account_circle</i>
         <input name="client_name" id="icon_prefix3" type="text" class="validate" value="{{ isset($clients)? $clients['client_name']:null }}" >
@@ -36,7 +72,7 @@
             <option value="">Choose your option</option>
             <option value="Active" @if(old('client_status', (isset($clients ) && $clients['client_status'] == 'Active'))) selected @endif > Active</option>
             <option value="Inactive" @if(old('client_status', (isset($clients ) && $clients['client_status'] == 'Inactive'))) selected @endif > Inactive</option>
-		
+
         </select>
         <label for="client_address">Client Status</label>
     </div>
@@ -53,4 +89,4 @@
         <input name="client_address"  id="icon_prefix3" type="text" class="validate" value="{{ isset($clients)? $clients['client_address']:null }}">
         <label for="client_address">Address</label>
     </div>-->
-</div>
+</div>--}}
