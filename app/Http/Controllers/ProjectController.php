@@ -13,6 +13,7 @@ class ProjectController extends Controller
     }
     public function create()
     {
-        return view();
+        $data['title']="Add New Profit";
+        return view('project.create', $data);
     }
 }
