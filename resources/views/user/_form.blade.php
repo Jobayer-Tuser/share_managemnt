@@ -12,7 +12,7 @@
 <div class="row">
   <div class="form-group col-md-6">
     <label for="">Password @if ($errors->has('password')) <small class="red-text"> [ {{ $errors->first('password') }} ] </small>@endif</label>
-    <input type="password" name="password" class="form-control" id="" placeholder="Password" value="{{ old('password',isset($data) ? $data->password : null ) }}">
+    <input type="password" name="password" class="form-control" id="" placeholder="Password" value="">
   </div>
 
   <div class="form-group col-md-6">
