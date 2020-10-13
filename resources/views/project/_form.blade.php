@@ -13,19 +13,19 @@
     <div class="row">
       <div class="form-group col-md-6">
         <label for="">LC Number</label>
-        <input type="number" name="lc_number" class="form-control" id="" placeholder="789" value=" {{ isset($projects)? $projects['lc_number']:null }}" >
+        <input type="number" name="lc_number" class="form-control" id="" placeholder="789" value="{{ isset($projects)? $projects['lc_number']:null }}" >
       </div>
 
       <div class="form-group col-md-6">
         <label for="">LC Value</label>
-        <input type="text" name="lc_value" class="form-control" id="" placeholder=" 200000" value=" {{ isset($projects)? $projects['lc_value']:null }}" >
+        <input type="text" name="lc_value" class="form-control" id="" placeholder=" 200000" value="{{ isset($projects)? $projects['lc_value']:null }}" >
       </div>
     </div>
 
     <div class="row">
          <div class="form-group col-md-6">
            <label for="">Forwarded Lc value</label>
-           <input type="text" name="forward_lc_value" class="form-control" id="" placeholder="140000" value=" {{ isset($projects)? $projects['forward_lc_value']:null }}" >
+           <input type="text" name="forward_lc_value" class="form-control" id="" placeholder="140000" value="{{ isset($projects)? $projects['forward_lc_value']:null }}" >
          </div>
 
          <div class="form-group col-md-6">
