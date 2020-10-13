@@ -30,7 +30,7 @@
 
          <div class="form-group col-md-6">
            <label for="">Total Profit Margin</label>
-           <input type="text" name="total_profit_margin" class="form-control" id="" placeholder=" 60000" value=" {{ isset($projects)? $projects['total_profit_margin']:null }}">
+           <input type="text" name="total_profit_margin" class="form-control" id="" placeholder="60000" value=" {{ isset($projects)? $projects['total_profit_margin']:null }}">
          </div>
     </div>
     <div class="row">
