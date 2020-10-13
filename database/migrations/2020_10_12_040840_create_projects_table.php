@@ -37,7 +37,7 @@ class CreateProjectsTable extends Migration
             $table->float('profits_shared_with_shareholders');
             $table->float('main_account_balaced_after_profit');
             $table->float('profit_share_outstanding');
-            
+
             $table->string('payment_method');
 
             $table->string('created_by')->nullable();
