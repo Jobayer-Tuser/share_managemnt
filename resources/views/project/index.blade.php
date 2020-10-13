@@ -58,8 +58,8 @@
                             <td>{{$eachProject['total_profit_margin']}}</td>
                             <td>
                                 <a  href=" {{route('project.edit', $eachProject['id'])}} " class="btn btn-warning btn-xs">Edit</a>
-                                <a data-target="{{$eachProject['id']}}" class="btn btn-xs btn-danger" href="">Delete</a>
-                                <a data-target="{{$eachProject['id']}}" class="btn btn-xs btn-danger" href=" {{route('project.show', $eachProject['id'])}}">Details</a>
+                                <a data-target="#" class="btn btn-xs btn-danger" href="#">Delete</a>
+                                <a data-target="{{$eachProject['id']}}" class="btn btn-xs btn-default" href=" {{route('project.show', $eachProject['id'])}}">Details</a>
 
                             </td>
                           </tr>

@@ -37,7 +37,7 @@ Route::get('/list', function () {
         Route::get('/project/create', [ProjectController::class, 'create'])->name('project.create');
         Route::post('/project/store', [ProjectController::class, 'store'])->name('project.store');
         Route::get('/project/edit/{id}', [ProjectController::class, 'edit'])->name('project.edit');
-        Route::post('/project/show', [ProjectController::class, 'show'])->name('project.show');
+        Route::get('/project/show/{id}', [ProjectController::class, 'show'])->name('project.show');
         Route::post('/project/update/{id}', [ProjectController::class, 'update'])->name('project.update');
 
         //user
