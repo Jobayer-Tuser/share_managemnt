@@ -66,11 +66,11 @@ class DisburshmentController extends Controller
         return redirect()->route('disburshment.edit',$id);
     }
 
-    // public function show($id)
-    // {
-    //     $user=User::find($id);
+    public function show($id)
+    {
+        $disburshment=Disburshment::find($id);
         
-    //     //return $user;
-    //     return view('user.show',compact('user'));
-    // }
+        //return $user;
+        return view('disburshment.show',compact('disburshment'));
+    }
 }
