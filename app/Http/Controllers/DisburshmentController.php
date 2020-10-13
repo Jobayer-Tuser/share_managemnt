@@ -14,6 +14,10 @@ class DisburshmentController extends Controller
          $data['title']="List of Disburshment";
          $data['disburshments']=Disburshment::all();
 
+        $disburshments = New Disburshment();
+        $disburshments = $disburshments->orderBy('id', 'DESC')->paginate(10);
+        $data['disburshments']=$disburshments;
+        $data['serial']    = 1;
          return view('disburshment.index',$data);
         // return "hello";
     }

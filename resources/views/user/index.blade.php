@@ -52,13 +52,13 @@
 
                     @foreach ($users as $user)
                     <tr>
-                      <td>{{$user->id}}</td>
+                      <td>{{$serial++}}</td>
                       <td>{{$user->name}}</td>
                       <td>{{$user->email}}</td>
                       <td>{{$user->total_share}}</td>
                       <td>{{$user->share}}</td>
-                      <td><a href="{{route('user.edit',$user->id)}}" class="btn btn-warning">Edit</a> <a href="#" class="btn btn-danger">Delete</a></td>
-                      <td> <a href="{{route('user.show',$user->id)}}"> See more</a></td>
+                      <td><a href="{{route('user.edit',$user->id)}}" class="btn btn-xs btn-warning">Edit</a> <a href="#" class="btn btn-xs btn-danger">Delete</a> <a class='btn btn-xs btn-default' href="{{route('user.show',$user->id)}}"> See more</a></td>
+                      
                       
                       
                   </tr>
