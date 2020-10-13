@@ -12,7 +12,6 @@ class UserController extends Controller
     public function index()
     {
         $data['title']="List of Shareholders";
-
         $users = New User();
         $users = $users->orderBy('id', 'DESC')->simplePaginate(5);
         $data['users']=$users;
@@ -31,9 +30,15 @@ class UserController extends Controller
         $request->validate([
             'name'=>'required|unique:users|string',
             'email'=>'required',
-            'password'=>'required',
+            'password'=>'min:6|required_with:confirm_password|same:confirm_password',
+            'confirm_password'=>'min:6',
             'share'=>'required|regex:/^\d+(\.\d{1,2})?$/',
+<<<<<<< HEAD
 
+=======
+            'total_share'=>'required|regex:/^\d+(\.\d{1,2})?$/',
+            
+>>>>>>> 5e4170d97c4970452ba774419fe08404f582dac6
         ]);
         $user= new User();
         $user->name=$request->name;
@@ -60,9 +65,16 @@ class UserController extends Controller
         $request->validate([
             'name'=>'required|string|unique:users,name,'.$id,
             'email'=>'required',
-            //'password'=>'required',
+            'password'=>'same:confirm_password',
+            'confirm_password'=>'',
             'share'=>'required|regex:/^\d+(\.\d{1,2})?$/',
+<<<<<<< HEAD
 
+=======
+            'total_share'=>'required|regex:/^\d+(\.\d{1,2})?$/',
+
+            
+>>>>>>> 5e4170d97c4970452ba774419fe08404f582dac6
         ]);
         $user=  User::find($id);
         $user->name=$request->name;

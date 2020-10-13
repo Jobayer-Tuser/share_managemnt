@@ -24,7 +24,7 @@
                 <!-- left column -->
                 <div class="col-md-12">
                 <!-- jquery validation -->
-                    <div class="card">
+                    <div class="card card-primary">
                       <div class="card-header">
                         <h3 class="card-title">Create Shareholder</h3>
                       </div>

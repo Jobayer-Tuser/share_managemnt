@@ -15,8 +15,8 @@
     <input type="password" name="password" class="form-control" id="" placeholder="Password" value="">
   </div>
   <div class="form-group col-md-6">
-    <label for="">Confirm Password @if ($errors->has('password')) <small class="red-text"> [ {{ $errors->first('password') }} ] </small>@endif</label>
-    <input type="password" name="password" class="form-control" id="" placeholder="Password" value="">
+    <label for="">Confirm Password @if ($errors->has('confirm_password')) <small class="red-text"> [ {{ $errors->first('confirm_password') }} ] </small>@endif</label>
+    <input type="password" name="confirm_password" class="form-control" id="" placeholder="confirm_password" value="">
   </div>
 </div>
     <div class="row">
