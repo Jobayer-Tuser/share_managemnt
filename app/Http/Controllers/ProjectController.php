@@ -23,7 +23,7 @@ class ProjectController extends Controller
         $data['title']="List of projects";
 
         $projects = New Project();
-        $projects = $projects->orderBy('id', 'DESC')->paginate(10);
+        $projects = $projects->orderBy('id', 'DESC')->simplePaginate(5);
         $data['projects']=$projects;
         $data['serial']    = 1;
         return view('project.index',$data);

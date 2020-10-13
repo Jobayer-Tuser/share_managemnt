@@ -46,7 +46,7 @@
                     <thead>
                         <tr>
                             
-                            <th>id</th>
+                            <th>Serial</th>
                             <th>Shareholder Name</th>
                             <th>Amount</th>
                             <th>Date</th>
@@ -62,8 +62,8 @@
                               <td>{{$disburshment->shareholder->name}}</td>
                               <td>{{$disburshment->amount}}</td>
                               <td>{{$disburshment->date}}</td>
-                              <td> <a href="{{route('disburshment.edit',$disburshment->id)}}" class="btn btn-xs btn-warning">Edit</a> <a href="#" class="btn btn-xs btn-danger">Delete</a>
-                              <a class="btn btn-xs btn-warning" href="{{route('disburshment.show',$disburshment->id)}}"> See more</a></td>
+                              <td> <a href="{{route('disburshment.edit',$disburshment->id)}}" class="btn btn-xs btn-warning">Edit</a> 
+                              <a class="btn btn-xs btn-default" href="{{route('disburshment.show',$disburshment->id)}}"> See more</a></td>
                           </tr>
                             @endforeach
                    
@@ -143,12 +143,10 @@
 
 
     @endpush
-    {{-- <div class="text-center">
-      {{$disburshments->render()}}  
-     </div> --}}
+  
 
   
-     {{-- <div class="d-flex justify-content-center">
+     <div class="d-flex justify-content-center">
       {!! $disburshments->links() !!}
-  </div> --}}
+     </div>
 @endsection

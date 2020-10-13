@@ -37,7 +37,7 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>id</th>
+                    <th>Serial</th>
                     <th>LC/TT Date</th>
                     <th>Style Number & Order Session</th>
                     <th>LC number</th>
@@ -60,7 +60,6 @@
                             <td>{{$eachProject['total_profit_margin']}}</td>
                             <td>
                                 <a  href=" {{route('project.edit', $eachProject['id'])}} " class="btn btn-warning btn-xs">Edit</a>
-                                <a data-target="#" class="btn btn-xs btn-danger" href="#">Delete</a>
                                 <a data-target="{{$eachProject['id']}}" class="btn btn-xs btn-default" href=" {{route('project.show', $eachProject['id'])}}">Details</a>
 
                             </td>
@@ -72,8 +71,12 @@
               </div>
               <!-- /.card-body -->
             </div>
+            <div class="d-flex justify-content-center">
+              {!! $projects->links() !!}
+             </div>
             <!-- /.card -->
           </div>
+          
           <!-- /.col -->
         </div>
         <!-- /.row -->
