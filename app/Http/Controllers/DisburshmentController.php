@@ -39,7 +39,7 @@ class DisburshmentController extends Controller
         $disburshment->shareholder_id=$request->shareholder_id;
         $disburshment->amount=$request->amount;
         $disburshment->date=$request->date;
-        $disburshment->created_by = Auth::User()->id;
+        $disburshment->created_by = Auth::User()->name;
         $disburshment->save();
         return redirect()->route('disburshment.index');
 
@@ -61,10 +61,11 @@ class DisburshmentController extends Controller
             'amount'=>'required|regex:/^\d+(\.\d{1,2})?$/',
 
         ]);
-        $disburshment=  Disburshment::find($id);
-        $disburshment->amount=$request->amount;
-        $disburshment->date=$request->date;
-        $disburshment->shareholder_id=$request->shareholder_id;
+        $disburshment= Disburshment::find($id);
+        $disburshment->amount = $request->amount;
+        $disburshment->date = $request->date;
+        $disburshment->shareholder_id = $request->shareholder_id;
+        $disburshment->updated_by = Auth::User()->name;
 
        //
         $disburshment->save();

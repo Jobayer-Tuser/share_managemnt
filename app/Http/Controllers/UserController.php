@@ -35,7 +35,7 @@ class UserController extends Controller
             'share'=>'required|regex:/^\d+(\.\d{1,2})?$/',
             'total_share'=>'required|regex:/^\d+(\.\d{1,2})?$/',
         ]);
-        
+
         $user= new User();
         $user->name=$request->name;
         $user->share=$request->share;
@@ -64,8 +64,8 @@ class UserController extends Controller
             'password'=>'same:confirm_password',
             'confirm_password'=>'',
             'share'=>'required|regex:/^\d+(\.\d{1,2})?$/',
-
         ]);
+        
         $user=  User::find($id);
         $user->name=$request->name;
         $user->share=$request->share;

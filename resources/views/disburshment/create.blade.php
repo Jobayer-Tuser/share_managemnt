@@ -5,11 +5,6 @@
 @push('css')
 
 @endpush
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 5e4170d97c4970452ba774419fe08404f582dac6
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
