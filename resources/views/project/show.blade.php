@@ -2,69 +2,98 @@
 
 
 @section('content')
+      <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 align-center">
 
-
-
-
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-          <div class="container-fluid">
-            <div class="row mb-2">
-              <div class="col-sm-6">
-                <h1>{{ isset($title) ? $title : "Title Not Found" }}</h1>
-              </div>
-              <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active">{{ isset($title) ? $title : "Title Not Found" }}</li>
-                </ol>
-              </div>
-            </div>
-          </div><!-- /.container-fluid -->
-        </section>
-
-        <!-- Main content -->
-        <section class="content">
-                <div class="card">
-                  <div class="card-header">
-                    <h3 class="card-title">{{$title}}</h3>
-                  </div>
-                  <!-- /.card-header -->
-                  <div class="card-body">
-                      <ul style="list-style: none">
-                        <li>LC or TT Date: {{$project['lc_or_tt_date']}}</li>
-                        <li>Style Number Order Session: {{$project['style_number_and_order_session']}}</li>
-                        <li>LC Number: {{$project['lc_number']}}</li>
-                        <li>LC Value: {{$project['lc_value']}}</li>
-                        <li>Forwarded Lc value: {{$project['forward_lc_value']}}</li>
-                        <li>Total Profit Margin: {{$project['total_profit_margin']}}</li>
-                        <li>Advanced Payment: {{$project['advanced_payment']}}</li>
-                        <li>Outstanding Payment: {{$project['outstanding_payment']}}</li>
-                        <li>Freight Cost: {{$project['freight_cost']}}</li>
-                        <li>Shipment Mode: {{$project['shipment_mode']}}</li>
-                        <li>Shipment Date: {{$project['shipment_date']}}</li>
-                        <li>Final Invoice Of Manufacturer: {{$project['final_invoice_of_manufacturer']}}</li>
-                        <li>Final Invoice Of Buyer: {{$project['final_invoice_amount_of_buyer']}}</li>
-                        <li>Amount Recieved: {{$project['amount_recieved']}}</li>
-                        <li>Profit Share With Shareholder: {{$project['profits_shared_with_shareholders']}}</li>
-                        <li>Main Acoount Balanced: {{$project['main_account_balaced_after_profit']}}</li>
-                        <li>Payment Method: {{$project['payment_method']}}</li>
-                        <li>Payment Record: {{$project['payment_record']}}</li>
-                        <li>Profit Share Outstanding: {{$project['profit_share_outstanding']}}</li>
-                    </ul>
-                    <a href="{{route('project.index')}}" class="btn btn-success">Go back</a>
-                  </div>
-                  <!-- /.card-body -->
+            <!-- Profile Image -->
+            <div class="card card-primary card-outline">
+              <div class="card-body box-profile">
+                <div class="text-center">
+                  <!-- <img class="profile-user-img img-fluid img-circle"
+                       src="../../dist/img/user4-128x128.jpg"
+                       alt="User profile picture"> -->
                 </div>
-                <!-- /.card -->
-              </div>
-              <!-- /.col -->
-            </div>
-            <!-- /.row -->
-          </div>
-          <!-- /.container-fluid -->
-        </section>
 
+                <h3 class="profile-username text-center">{{Auth::User()->name}}</h3>
+
+                <p class="text-muted text-center">Shareholder Project Details</p>
+
+                <ul class="list-group list-group-unbordered mb-3">
+
+
+                  <li class="list-group-item">
+                    <b> LC or TT Date:</b> <a class="float-right"> {{$project['lc_or_tt_date']}}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b> Style Number Order Session:</b> <a class="float-right"> {{$project['style_number_and_order_session']}}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b> LC Number:</b> <a class="float-right"> {{$project['lc_number']}}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b> Lc value:</b> <a class="float-right"> {{$project['lc_value']}}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b> Lc value:</b> <a class="float-right"> {{$project['forward_lc_value']}}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b> Total Profit Margin:</b> <a class="float-right"> {{$project['total_profit_margin']}}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b> Advanced Payment:</b> <a class="float-right"> {{$project['advanced_payment']}}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b> Outstanding Payment:</b> <a class="float-right"> {{$project['outstanding_payment']}}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b> Freight Cost:</b> <a class="float-right"> {{$project['freight_cost']}}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b> Shipment Mode:</b> <a class="float-right"> {{$project['shipment_mode']}}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b> Shipment Date:</b> <a class="float-right"> {{$project['shipment_date']}}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b> Final Invoice Of Manufacturer:</b> <a class="float-right"> {{$project['final_invoice_of_manufacturer']}}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b> Final Invoice Of Buyer:</b> <a class="float-right"> {{$project['final_invoice_amount_of_buyer']}}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b> Amount Recieved:</b> <a class="float-right"> {{$project['amount_recieved']}}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b> Profit Share With Shareholder:</b> <a class="float-right"> {{$project['profits_shared_with_shareholders']}}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b> Main Acoount Balanced:</b> <a class="float-right"> {{$project['main_account_balaced_after_profit']}}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b> Payment Method:</b> <a class="float-right"> {{$project['payment_method']}}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b> Payment Record:</b> <a class="float-right"> {{$project['payment_record']}}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b> Profit Share Outstanding:</b> <a class="float-right"> {{$project['profit_share_outstanding']}}</a>
+                  </li>
+
+
+
+                </ul>
+
+                <a href="{{route('disburshment.index')}}" class="btn btn-primary btn-block align-center">Go back</a>
+              </div>
+              <!-- /.card-body -->
+            </div>
+           </div>
+        </div>
+    </div>
+</section>
 
 
 @endsection

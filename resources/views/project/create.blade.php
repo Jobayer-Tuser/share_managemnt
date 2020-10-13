@@ -12,7 +12,7 @@
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-         
+
 
         </div>
       </div><!-- /.container-fluid -->
@@ -27,9 +27,9 @@
                 <!-- jquery validation -->
                     <div class="card card-primary">
                       <div class="card-header">
-                        
+
                           <h3 class="card-title">{{ isset($title) ? $title : "Title Not Found" }}</h3>
-                        
+
                       </div>
                       <!-- /.card-header -->
                       <!-- form start -->
@@ -38,7 +38,7 @@
                         @include('project._form')
                         <!-- /.card-body -->
                         <div class="card-footer">
-                          <button type="submit" class="btn btn-xs btn-success">Submit</button>
+                          <a href="{{route('project.index')}}" type="submit" class="btn btn-xs btn-success">Submit</a>
                           <a href="{{route('project.index')}}" class="btn btn-xs btn-danger">Cancle</a>
                         </div>
                       </form>

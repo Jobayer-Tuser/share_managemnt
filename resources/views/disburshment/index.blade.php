@@ -63,9 +63,9 @@
                               <td> {{$serial++}} </td>
                               <td>{{$disburshment->shareholder->name}}</td>
                               <td>{{$disburshment->amount}}</td>
-                              <td>{{$disburshment->amount}}</td>
                               <td>{{$disburshment->date}}</td>
-                              <td>{{$disburshment->date}}</td>
+                              <td>{{$disburshment->created_by ? $disburshment->created_by :"----"}}</td>
+                              <td>{{$disburshment->updated_by ? $disburshment->created_by :"----"}}</td>
                               <td> <a href="{{route('disburshment.edit',$disburshment->id)}}" class="btn btn-xs btn-warning">Edit</a>
                               <a class="btn btn-xs btn-default" href="{{route('disburshment.show',$disburshment->id)}}"> See more</a></td>
                           </tr>
