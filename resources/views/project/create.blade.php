@@ -38,12 +38,13 @@
                       </div>
                       <!-- /.card-header -->
                       <!-- form start -->
-                      <form role="form" id="quickForm">
+                      <form method="post" role="form" id="quickForm" action="{{route('project.store')}}">
+                          @csrf
                         @include('project._form')
                         <!-- /.card-body -->
                         <div class="card-footer">
-                          <button type="submit" class="btn btn-success">Submit</button>
-                          <button type="submit" class="btn btn-danger">Cancle</button>
+                          <button type="submit" class="btn btn-xs btn-success">Submit</button>
+                          <button type="submit" class="btn btn-xs btn-danger">Cancle</button>
                         </div>
                       </form>
                     </div>
