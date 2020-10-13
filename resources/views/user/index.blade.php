@@ -40,11 +40,11 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>id</th>
+                    <th>Serial</th>
                     <th>User Name</th>
                     <th>Email</th>
                     <th>Total Share</th>
-                    <th>Out of Share</th>
+                    <th>Share</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -63,22 +63,29 @@
                       
                   </tr>
                     @endforeach
-                  
+                    
 
 
                   </tbody>
 
                 </table>
+                
               </div>
+              
               <!-- /.card-body -->
             </div>
+            <div class="d-flex justify-content-center">
+              {!! $users->links() !!}
+             </div>
             <!-- /.card -->
           </div>
           <!-- /.col -->
         </div>
         <!-- /.row -->
+        
       </div>
       <!-- /.container-fluid -->
+      
     </section>
 
 
@@ -137,4 +144,5 @@
 
           </script>
     @endpush
+    
 @endsection

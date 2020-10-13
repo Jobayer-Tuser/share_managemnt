@@ -26,7 +26,7 @@
         </div>
         <div class="form-group col-md-6">
             <label for="">Share @if ($errors->has('share')) <small class="red-text"> [ {{ $errors->first('share') }} ] </small>@endif</label>
-            <input type="text" name="share" class="form-control" id="" placeholder="User Share" value="{{ old('share',isset($data) ? $data->share : null ) }}">
+            <input type="text" name="share" class="form-control" id="" placeholder="Share " value="{{ old('share',isset($data) ? $data->share : null ) }}">
         </div>
     </div>
  </div>

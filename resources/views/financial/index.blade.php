@@ -40,7 +40,7 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>ID</th>
+                    <th>Serial</th>
                     <th>LC Number</th>
                     <th>Shareholder Id</th>
                     <th>Share Percentage</th>
@@ -51,8 +51,9 @@
 
                     @foreach ($financials as $financial)
                     <tr>
+                     
                       <td>{{$serial++}}</td>
-                      <td>{{$financial->lc_number->lc_number}}</td>
+                      <td> <a href="{{route('project.show', $financial->lc_number->id)}}">{{$financial->lc_number->lc_number}}</a> </td>
                       <td>{{$financial->shareholder_name->name}}</td>
                       <td>{{$financial->share_percentage}} %</td>
                       <td>{{$financial->amount}}</td>
@@ -67,7 +68,11 @@
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
+            <div class="d-flex justify-content-center">
+              {!! $financials->links() !!}
+             </div>
           </div>
+          
           <!-- /.col -->
         </div>
         <!-- /.row -->
