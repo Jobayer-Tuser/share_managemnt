@@ -43,6 +43,7 @@
                     <th>LC number</th>
                     <th>LC value</th>
                     <th>Forwarded LC value</th>
+                    <th>Total profit margin</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -50,6 +51,7 @@
                     @if(count($projects) > 0)
                         @foreach($projects AS $eachProject)
                           <tr>
+                            <td>{{$eachProject['id']}}</td>
                             <td>{{$eachProject['lc_or_tt_date']}}</td>
                             <td>{{$eachProject['style_number_and_order_session']}}</td>
                             <td>{{$eachProject['lc_number']}}</td>
