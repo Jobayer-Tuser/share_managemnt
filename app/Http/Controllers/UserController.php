@@ -33,12 +33,6 @@ class UserController extends Controller
             'password'=>'min:6|required_with:confirm_password|same:confirm_password',
             'confirm_password'=>'min:6',
             'share'=>'required|regex:/^\d+(\.\d{1,2})?$/',
-<<<<<<< HEAD
-
-=======
-            'total_share'=>'required|regex:/^\d+(\.\d{1,2})?$/',
-            
->>>>>>> 5e4170d97c4970452ba774419fe08404f582dac6
         ]);
         $user= new User();
         $user->name=$request->name;
@@ -68,13 +62,6 @@ class UserController extends Controller
             'password'=>'same:confirm_password',
             'confirm_password'=>'',
             'share'=>'required|regex:/^\d+(\.\d{1,2})?$/',
-<<<<<<< HEAD
-
-=======
-            'total_share'=>'required|regex:/^\d+(\.\d{1,2})?$/',
-
-            
->>>>>>> 5e4170d97c4970452ba774419fe08404f582dac6
         ]);
         $user=  User::find($id);
         $user->name=$request->name;
