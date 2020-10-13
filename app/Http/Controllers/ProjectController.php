@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\Project;
+use App\Models\Financial;
+use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
@@ -25,6 +27,7 @@ class ProjectController extends Controller
     }
 
     public function store(Request $request){
+        
         $validateData = $request->validate([
             'lc_or_tt_date' => 'required',
             'style_number_and_order_session' => 'required',
@@ -47,7 +50,6 @@ class ProjectController extends Controller
             'profit_share_outstanding' => 'required',
         ]);
 
-        //return $request->all();
 
         $post = new Project;
         $post->lc_or_tt_date  = $request->lc_or_tt_date ;
@@ -70,7 +72,25 @@ class ProjectController extends Controller
         $post->payment_record  = $request->payment_record ;
         $post->profit_share_outstanding  = $request->profit_share_outstanding;
 
+        
         $post->save();
+        
+            
+        
+         $shareholders=User::all();
+         
+            foreach($shareholders as $shareholder){
+                 $financial= new Financial;
+                 $financial->project_id=$post->id;
+                 $financial->shareholder_id=$shareholder->id;
+                 $financial->share_percentage=((($post->profits_shared_with_shareholders/ ($shareholder->total_share))*($shareholder->share))*100)/$post->profits_shared_with_shareholders;
+                 $financial->amount=($post->profits_shared_with_shareholders/ ($shareholder->total_share))*($shareholder->share);
+                 $financial->save();
+                //amount echo ($post->profits_shared_with_shareholders/ ($shareholder->total_share))*($shareholder->share) ." ";
+                // percentage echo ((($post->profits_shared_with_shareholders/ ($shareholder->total_share))*($shareholder->share))*100)/$post->profits_shared_with_shareholders ." ";
+            }
+        
+        
         return redirect('/project/create');
 
     }
@@ -112,7 +132,6 @@ class ProjectController extends Controller
                     'profit_share_outstanding' => 'required',
                 ]);
 
-                //return $request->all();
 
                 $post = Project::find($id);
                 $post->lc_or_tt_date  = $request->lc_or_tt_date ;
@@ -135,6 +154,7 @@ class ProjectController extends Controller
                 $post->payment_record  = $request->payment_record ;
                 $post->profit_share_outstanding  = $request->profit_share_outstanding;
 
+               
                 $post->save();
                 return redirect('/index');
 
