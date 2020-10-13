@@ -36,7 +36,7 @@
                         @include('user._form')
                         <!-- /.card-body -->
                         <div class="card-footer">
-                          <button type="submit" class="btn btn-primary">Edit</button>
+                          <button type="submit" class="btn btn-primary">Update</button>
                           <a href="{{route('user.index')}}" class="btn btn-danger">Cancel</a>
                         </div>
                       </form>

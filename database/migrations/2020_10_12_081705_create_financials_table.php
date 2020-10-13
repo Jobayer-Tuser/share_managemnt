@@ -23,6 +23,8 @@ class CreateFinancialsTable extends Migration
 
             $table->float('share_percentage');
             $table->float('amount');
+            $table->string('created_by')->nullable();
+            $table->string('updated_by')->nullable();
             $table->timestamps();
 
         });

@@ -39,8 +39,9 @@ class DisburshmentController extends Controller
         $disburshment->shareholder_id=$request->shareholder_id;
         $disburshment->amount=$request->amount;
         $disburshment->date=$request->date;
+        $disburshment->created_by = Auth::User()->id;
         $disburshment->save();
-        return redirect()->route('disburshment.create');
+        return redirect()->route('disburshment.index');
 
     }
 

@@ -19,6 +19,8 @@ class CreateDisburshmentsTable extends Migration
             $table->unsignedBigInteger('shareholder_id');
             $table->float('amount');
             $table->date('date');
+            $table->string('created_by')->nullable();
+            $table->string('updated_by')->nullable();
             $table->timestamps();
         });
     }

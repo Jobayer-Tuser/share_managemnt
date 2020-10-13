@@ -4,10 +4,7 @@
 
 @push('css')
 
-
 @endpush
-
-{{$errors}}
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -26,7 +23,7 @@
           <!-- left column -->
           <div class="col-md-12">
             <!-- jquery validation -->
-            <div class="card card-primary">
+            <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Create Disburshment</h3>
               </div>
@@ -37,8 +34,8 @@
                 @include('disburshment._form')
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                  <a href="{{route('disburshment.index')}}" class="btn btn-danger">Back</a>
+                  <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                  <a href="{{route('disburshment.index')}}" class="btn btn-sm btn-danger">Back</a>
                 </div>
               </form>
             </div>

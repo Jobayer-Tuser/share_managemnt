@@ -45,28 +45,32 @@
                 <table id="example2" class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            
+
                             <th>Serial</th>
                             <th>Shareholder Name</th>
                             <th>Amount</th>
                             <th>Date</th>
+                            <th>Created By</th>
+                            <th>Updated By</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                          
+
 
                             @foreach ($disburshments as $disburshment)
                             <tr>
                               <td> {{$serial++}} </td>
                               <td>{{$disburshment->shareholder->name}}</td>
                               <td>{{$disburshment->amount}}</td>
+                              <td>{{$disburshment->amount}}</td>
                               <td>{{$disburshment->date}}</td>
-                              <td> <a href="{{route('disburshment.edit',$disburshment->id)}}" class="btn btn-xs btn-warning">Edit</a> 
+                              <td>{{$disburshment->date}}</td>
+                              <td> <a href="{{route('disburshment.edit',$disburshment->id)}}" class="btn btn-xs btn-warning">Edit</a>
                               <a class="btn btn-xs btn-default" href="{{route('disburshment.show',$disburshment->id)}}"> See more</a></td>
                           </tr>
                             @endforeach
-                   
+
 
                     </tbody>
 
@@ -143,9 +147,9 @@
 
 
     @endpush
-  
 
-  
+
+
      <div class="d-flex justify-content-center">
       {!! $disburshments->links() !!}
      </div>

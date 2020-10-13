@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -32,15 +33,16 @@ class UserController extends Controller
             'email'=>'required',
             'password'=>'required',
             'share'=>'required|regex:/^\d+(\.\d{1,2})?$/',
-            
+
         ]);
         $user= new User();
         $user->name=$request->name;
         $user->share=$request->share;
         $user->total_share=$request->total_share;
         $user->email=$request->email;
-        
+
         $user->password=Hash::make($request->password);
+        $user->created_by = Auth::User()->name;
         $user->save();
         return redirect()->route('user.index');
     }
@@ -60,7 +62,7 @@ class UserController extends Controller
             'email'=>'required',
             //'password'=>'required',
             'share'=>'required|regex:/^\d+(\.\d{1,2})?$/',
-            
+
         ]);
         $user=  User::find($id);
         $user->name=$request->name;
@@ -70,15 +72,16 @@ class UserController extends Controller
         if(isset($request->password)){
             $user->password=Hash::make($request->password);
         }
-       // 
+        $user->updated_by = Auth::User()->name;
+       //
         $user->save();
-        return redirect()->route('user.edit',$id);
+        return redirect()->route('user.index');
     }
 
     public function show($id)
     {
         $user=User::find($id);
-        
+
         //return $user;
         return view('user.show',compact('user'));
     }

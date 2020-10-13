@@ -35,8 +35,8 @@
                 @include('disburshment._form')
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Edit</button>
-                  <a href="{{route('disburshment.index')}}" class="btn btn-danger">Back</a>
+                  <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                  <a href="{{route('disburshment.index')}}" class="btn btn-sm btn-danger">Back</a>
                 </div>
               </form>
             </div>
