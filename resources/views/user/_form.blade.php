@@ -15,14 +15,19 @@
     <input type="password" name="password" class="form-control" id="" placeholder="Password" value="">
   </div>
 
-  <div class="form-group col-md-6">
-    <label for="">Share @if ($errors->has('share')) <small class="red-text"> [ {{ $errors->first('share') }} ] </small>@endif</label>
-    <input type="text" name="share" class="form-control" id="" placeholder="Share " value="{{ old('share',isset($data) ? $data->share : null ) }}">
-  </div>
-  <div class="form-group col-md-6">
-    <label for="">Total Share @if ($errors->has('total_share')) <small class="red-text"> [ {{ $errors->first('total_share') }} ] </small>@endif</label>
-    <input type="text" name="total_share" class="form-control" id="total_share" placeholder="Total Share" value="{{ old('total_share',isset($data) ? $data->total_share : null ) }}">
-  </div>
+    <div class="row">
+
+  
+        
+        <div class="form-group col-md-6">
+            <label for="">Total Share @if ($errors->has('total_share')) <small class="red-text"> [ {{ $errors->first('total_share') }} ] </small>@endif</label>
+            <input type="text" name="total_share" class="form-control" id="total_share" placeholder="Total Share" value="{{ old('total_share',isset($data) ? $data->total_share : null ) }}">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="">Out Of Share @if ($errors->has('share')) <small class="red-text"> [ {{ $errors->first('share') }} ] </small>@endif</label>
+            <input type="text" name="share" class="form-control" id="" placeholder="Out Of Share " value="{{ old('share',isset($data) ? $data->share : null ) }}">
+        </div>
+    </div>
  </div>
 
 
