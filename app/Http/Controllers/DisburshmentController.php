@@ -13,7 +13,11 @@ class DisburshmentController extends Controller
     {
          $data['title']="List of Disburshment";
          $data['disburshments']=Disburshment::all();
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 359430a621fe2eff42e458ac44517d7ce8b79371
          return view('disburshment.index',$data);
         // return "hello";
     }
@@ -29,7 +33,11 @@ class DisburshmentController extends Controller
     {
         $request->validate([
             'amount'=>'required|regex:/^\d+(\.\d{1,2})?$/',
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> 359430a621fe2eff42e458ac44517d7ce8b79371
         ]);
         $disburshment= new Disburshment();
         $disburshment->shareholder_id=$request->shareholder_id;
@@ -37,7 +45,11 @@ class DisburshmentController extends Controller
         $disburshment->date=$request->date;
         $disburshment->save();
         return redirect()->route('disburshment.create');
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 359430a621fe2eff42e458ac44517d7ce8b79371
     }
 
 
@@ -54,14 +66,23 @@ class DisburshmentController extends Controller
     {
         $request->validate([
             'amount'=>'required|regex:/^\d+(\.\d{1,2})?$/',
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> 359430a621fe2eff42e458ac44517d7ce8b79371
         ]);
         $disburshment=  Disburshment::find($id);
         $disburshment->amount=$request->amount;
         $disburshment->date=$request->date;
         $disburshment->shareholder_id=$request->shareholder_id;
+<<<<<<< HEAD
    
        // 
+=======
+
+       //
+>>>>>>> 359430a621fe2eff42e458ac44517d7ce8b79371
         $disburshment->save();
         return redirect()->route('disburshment.edit',$id);
     }
@@ -69,7 +90,11 @@ class DisburshmentController extends Controller
     public function show($id)
     {
         $disburshment=Disburshment::find($id);
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 359430a621fe2eff42e458ac44517d7ce8b79371
         //return $user;
         return view('disburshment.show',compact('disburshment'));
     }
