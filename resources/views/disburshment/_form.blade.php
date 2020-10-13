@@ -18,9 +18,6 @@
         <input type="date" name="date" class="form-control" id="date" placeholder="Enter date" required value="{{ old('date',isset($data) ? $data->date :null) }}">
       </div>
   </div>
-
-
-
 </div>
 
 
