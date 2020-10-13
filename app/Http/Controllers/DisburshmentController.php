@@ -16,7 +16,7 @@ class DisburshmentController extends Controller
         
 
          $disburshments = New Disburshment();
-        $disburshments = $disburshments->orderBy('id', 'DESC')->paginate(10);
+        $disburshments = $disburshments->orderBy('id', 'DESC')->paginate(5);
         $data['disburshments']=$disburshments;
         $data['serial']    = 1;
        
