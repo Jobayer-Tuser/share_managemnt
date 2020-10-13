@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Project;
 use App\Models\Financial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
@@ -79,6 +80,7 @@ class ProjectController extends Controller
         $post->payment_method  = $request->payment_method ;
         $post->payment_record  = $request->payment_record ;
         $post->profit_share_outstanding  = $request->profit_share_outstanding;
+        $post->created_by = Auth::User()->name;
 
 
         $post->save();
@@ -162,6 +164,7 @@ class ProjectController extends Controller
                 $post->payment_method  = $request->payment_method ;
                 $post->payment_record  = $request->payment_record ;
                 $post->profit_share_outstanding  = $request->profit_share_outstanding;
+                $post->updated_by = Auth::User()->name;
 
 
                 $post->save();
