@@ -39,4 +39,38 @@ class DisburshmentController extends Controller
         return redirect()->route('disburshment.create');
         
     }
+
+
+    public function edit($id)
+    {
+
+        $data['title'] = "Edit Disburshment";
+        $data['data']=Disburshment::find($id);
+        $data['shareholders']=User::all();
+        return view('disburshment.edit', $data);
+    }
+
+    public function update(Request $request,$id)
+    {
+        $request->validate([
+            'amount'=>'required|regex:/^\d+(\.\d{1,2})?$/',
+            
+        ]);
+        $disburshment=  Disburshment::find($id);
+        $disburshment->amount=$request->amount;
+        $disburshment->date=$request->date;
+        $disburshment->shareholder_id=$request->shareholder_id;
+   
+       // 
+        $disburshment->save();
+        return redirect()->route('disburshment.edit',$id);
+    }
+
+    // public function show($id)
+    // {
+    //     $user=User::find($id);
+        
+    //     //return $user;
+    //     return view('user.show',compact('user'));
+    // }
 }

@@ -62,7 +62,8 @@
                               <td>{{$disburshment->shareholder->name}}</td>
                               <td>{{$disburshment->amount}}</td>
                               <td>{{$disburshment->date}}</td>
-                              <td>1.8</td>
+                              <td><a href="{{route('disburshment.edit',$disburshment->id)}}" class="btn btn-warning">Edit</a> <a href="#" class="btn btn-danger">Delete</a></td>
+                              <td> <a href="{{route('disburshment.show',$disburshment->id)}}"> See more</a></td>
                           </tr>
                             @endforeach
                    

@@ -43,6 +43,7 @@ Route::get('/list', function () {
         Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
         Route::post('/user/update/{id}', [UserController::class, 'update'])->name('user.update');
         Route::get('/user/show/{id}',[UserController::class,'show'])->name('user.show');
+
         //financial
         Route::get('/financial/index', [FinancialController::class, 'index'])->name('financial.index');
         Route::get('/financial/create', [FinancialController::class, 'create'])->name('financial.create');
@@ -51,6 +52,9 @@ Route::get('/list', function () {
         Route::get('/disburshment/index', [DisburshmentController::class, 'index'])->name('disburshment.index');
         Route::get('/disburshment/create', [DisburshmentController::class, 'create'])->name('disburshment.create');
         Route::post('/disburshment/store', [DisburshmentController::class, 'store'])->name('disburshment.store');
+        Route::get('/disburshment/edit/{id}', [DisburshmentController::class, 'edit'])->name('disburshment.edit');
+        Route::post('/disburshment/update/{id}', [DisburshmentController::class, 'update'])->name('disburshment.update');
+        Route::get('/disburshment/show/{id}',[DisburshmentController::class,'show'])->name('disburshment.show');
 
 
       });
