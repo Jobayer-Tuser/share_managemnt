@@ -45,6 +45,8 @@
                     <th>Email</th>
                     <th>Total Share</th>
                     <th>Share</th>
+                    <th>Created By</th>
+                    <th>Updated By</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -57,6 +59,8 @@
                       <td>{{$user->email}}</td>
                       <td>{{$user->total_share}}</td>
                       <td>{{$user->share}}</td>
+                      <td>{{ $user->created_by ?$user->created_by :"-----" }}</td>
+                      <td>{{$user->updated_by ? $user->updated_by :"-----"}}</td>
                       <td><a href="{{route('user.edit',$user->id)}}" class="btn btn-xs btn-warning">Edit</a> <a href="#" class="btn btn-xs btn-danger">Delete</a> <a class='btn btn-xs btn-default' href="{{route('user.show',$user->id)}}"> See more</a></td>
                       
                       
