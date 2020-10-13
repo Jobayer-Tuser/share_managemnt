@@ -2,7 +2,7 @@
     <div class="row">
       <div class="form-group col-md-6">
         <label for="">LC or TT Date</label>
-        <input type="date" name="lc_or_tt_date" class="form-control" id="" placeholder="" value="{{ isset($projects)? $projects['lc_or_tt_date']:null }} ">
+        <input type="date" name="lc_or_tt_date" class="form-control" id="" placeholder="" value="{{ isset($projects)? $projects['lc_or_tt_date']:null }}">
 
       </div>
       <div class="form-group col-md-6">
