@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FinancialController;
 use App\Http\Controllers\DisburshmentController;
 // use App\Http\Middleware\Auth;
@@ -27,9 +28,10 @@ Route::get('/list', function () {
 
 
  Route::group(['middleware' => 'shareholder'], function () {
-    Route::get('/', function () {
-        return view('dashboard.dashboard');
-    })->name('dashboard.dashboard');
+    // Route::get('/', function () {
+    //     return view('dashboard.dashboard');
+    // })->name('dashboard.dashboard');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard.dashboard');
 
 
         //project

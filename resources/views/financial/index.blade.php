@@ -54,7 +54,7 @@
                       <td>{{$financial->id}}</td>
                       <td>{{$financial->project_id}}</td>
                       <td>{{$financial->shareholder_name->name}}</td>
-                      <td>{{$financial->share_percentage}}</td>
+                      <td>{{$financial->share_percentage}} %</td>
                       <td>{{$financial->amount}}</td>
                   </tr>
                     @endforeach
