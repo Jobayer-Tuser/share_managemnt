@@ -30,7 +30,8 @@ class UserController extends Controller
         $request->validate([
             'name'=>'required|unique:users|string',
             'email'=>'required',
-            'password'=>'required',
+            'password'=>'min:6|required_with:confirm_password|same:confirm_password',
+            'confirm_password'=>'min:6',
             'share'=>'required|regex:/^\d+(\.\d{1,2})?$/',
             
         ]);
@@ -58,7 +59,8 @@ class UserController extends Controller
         $request->validate([
             'name'=>'required|string|unique:users,name,'.$id,
             'email'=>'required',
-            //'password'=>'required',
+            'password'=>'min:6|same:confirm_password',
+            'confirm_password'=>'min:6',
             'share'=>'required|regex:/^\d+(\.\d{1,2})?$/',
             
         ]);
@@ -72,7 +74,7 @@ class UserController extends Controller
         }
        // 
         $user->save();
-        return redirect()->route('user.edit',$id);
+        return redirect()->route('user.index');
     }
 
     public function show($id)
