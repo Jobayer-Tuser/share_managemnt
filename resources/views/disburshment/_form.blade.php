@@ -10,8 +10,8 @@
   </div>
 
   <div class="form-group col-md-6">
-   <select class="form-control" name="shareholder_id" id="buyer_type_id" >
-    <option value="" disabled selected> - Select Shareholder - </option>
+   <select class="form-control" name="shareholder_id" id="buyer_type_id" required >
+    <option value="" disabled selected> - Select Shareholder -  </option>
     @foreach ($shareholders as $shareholder)
     <option value={{$shareholder->id}} @if(old('shareholder_id', (isset($data ) && $data->shareholder_id == $shareholder->id))) selected @endif>{{$shareholder->name}}</option>
     @endforeach
