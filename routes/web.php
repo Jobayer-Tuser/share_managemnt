@@ -42,7 +42,7 @@ Route::get('/list', function () {
         Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
         Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
         Route::post('/user/update/{id}', [UserController::class, 'update'])->name('user.update');
-
+        Route::get('/user/show/{id}',[UserController::class,'show'])->name('user.show');
         //financial
         Route::get('/financial/index', [FinancialController::class, 'index'])->name('financial.index');
         Route::get('/financial/create', [FinancialController::class, 'create'])->name('financial.create');

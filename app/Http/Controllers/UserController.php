@@ -70,4 +70,12 @@ class UserController extends Controller
         $user->save();
         return redirect()->route('user.edit',$id);
     }
+
+    public function show($id)
+    {
+        $user=User::find($id);
+        
+        //return $user;
+        return view('user.show',compact('user'));
+    }
 }
