@@ -58,12 +58,12 @@
 
                             @foreach ($disburshments as $disburshment)
                             <tr>
-                              <td> {{$disburshment->id}} </td>
+                              <td> {{$serial++}} </td>
                               <td>{{$disburshment->shareholder->name}}</td>
                               <td>{{$disburshment->amount}}</td>
                               <td>{{$disburshment->date}}</td>
-                              <td><a href="{{route('disburshment.edit',$disburshment->id)}}" class="btn btn-warning">Edit</a> <a href="#" class="btn btn-danger">Delete</a></td>
-                              <td> <a href="{{route('disburshment.show',$disburshment->id)}}"> See more</a></td>
+                              <td> <a href="{{route('disburshment.edit',$disburshment->id)}}" class="btn btn-xs btn-warning">Edit</a> <a href="#" class="btn btn-xs btn-danger">Delete</a>
+                              <a class="btn btn-xs btn-warning" href="{{route('disburshment.show',$disburshment->id)}}"> See more</a></td>
                           </tr>
                             @endforeach
                    

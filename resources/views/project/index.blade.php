@@ -51,7 +51,7 @@
                     @if(count($projects) > 0)
                         @foreach($projects AS $eachProject)
                           <tr>
-                            <td>{{$eachProject['id']}}</td>
+                            <td>{{$serial++}}</td>
                             <td>{{$eachProject['lc_or_tt_date']}}</td>
                             <td>{{$eachProject['style_number_and_order_session']}}</td>
                             <td>{{$eachProject['lc_number']}}</td>

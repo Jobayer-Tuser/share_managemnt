@@ -12,4 +12,7 @@ class Financial extends Model
     public function shareholder_name(){
         return $this->belongsTo('App\Models\User','shareholder_id');
     }
+    public function lc_number(){
+        return $this->belongsTo('App\Models\Project','project_id');
+    }
 }

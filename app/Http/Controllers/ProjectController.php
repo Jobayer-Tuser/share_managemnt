@@ -11,14 +11,22 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        $title="List of projects";
-        $n = 1;
-        $projects = Project::all();
-        return view('project.index')->with([
-            'projects' => $projects,
-            'title' => $title,
-            'n'=> $n
-        ]);
+        // $title="List of projects";
+        // $n = 1;
+        // $projects = Project::all()->desc();
+        // return view('project.index')->with([
+        //     'projects' => $projects,
+        //     'title' => $title,
+        //     'n'=> $n
+        // ]);
+
+        $data['title']="List of projects";
+
+        $projects = New Project();
+        $projects = $projects->orderBy('id', 'DESC')->paginate(10);
+        $data['projects']=$projects;
+        $data['serial']    = 1;
+        return view('project.index',$data);
     }
     public function create()
     {

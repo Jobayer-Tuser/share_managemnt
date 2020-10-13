@@ -41,7 +41,7 @@
                   <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Profit id</th>
+                    <th>LC Number</th>
                     <th>Shareholder Id</th>
                     <th>Share Percentage</th>
                     <th>Amount</th>
@@ -51,8 +51,8 @@
 
                     @foreach ($financials as $financial)
                     <tr>
-                      <td>{{$financial->id}}</td>
-                      <td>{{$financial->project_id}}</td>
+                      <td>{{$serial++}}</td>
+                      <td>{{$financial->lc_number->lc_number}}</td>
                       <td>{{$financial->shareholder_name->name}}</td>
                       <td>{{$financial->share_percentage}} %</td>
                       <td>{{$financial->amount}}</td>

@@ -9,8 +9,11 @@ class FinancialController extends Controller
 {
     public function index(){
         $data['title']="Financial List";
-        $data['financials']=Financial::all();
-        //return $data['financials'];
+
+        $financials = New Financial();
+        $financials = $financials->orderBy('id', 'DESC')->paginate(10);
+        $data['financials']=$financials;
+        $data['serial']    = 1;
         return view('financial.index',$data);
     }
 }
