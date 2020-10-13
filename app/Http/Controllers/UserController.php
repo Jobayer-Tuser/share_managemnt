@@ -13,7 +13,7 @@ class UserController extends Controller
     {
         $data['title']="List of Shareholders";
         $users = New User();
-        $users = $users->orderBy('id', 'DESC')->simplePaginate(5);
+        $users = $users->orderBy('id', 'DESC')->paginate(10);
         $data['users']=$users;
         $data['serial']    = 1;
         return view('user.index',$data);

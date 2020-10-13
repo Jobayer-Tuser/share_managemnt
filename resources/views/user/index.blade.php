@@ -79,7 +79,7 @@
               <!-- /.card-body -->
             </div>
             <div class="d-flex justify-content-center">
-              {!! $users->links() !!}
+              {!! $users->render() !!}
              </div>
             <!-- /.card -->
           </div>
