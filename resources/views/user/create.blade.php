@@ -32,9 +32,9 @@
                 <!-- left column -->
                 <div class="col-md-12">
                 <!-- jquery validation -->
-                    <div class="card card-primary">
+                    <div class="card">
                       <div class="card-header">
-                        <h3 class="card-title"></h3>
+                        <h3 class="card-title">Create Shareholder</h3>
                       </div>
                       <!-- /.card-header -->
                       <!-- form start -->
@@ -42,9 +42,9 @@
                         @csrf
                         @include('user._form')
                         <!-- /.card-body -->
-                        <div class="card-footer">
-                          <button type="submit" class="btn btn-primary">Submit</button>
-                          <a href="{{route('user.index')}}" class="btn btn-danger">Cancel</a>
+                        <div class="">
+                          <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+                          <a href="{{route('user.index')}}" class="btn btn-sm btn-danger">Cancel</a>
                         </div>
                       </form>
                     </div>
