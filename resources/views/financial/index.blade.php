@@ -40,55 +40,25 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
+                    <th>ID</th>
                     <th>Project id</th>
                     <th>Shareholder Id</th>
                     <th>Share Percentage</th>
                     <th>Amount</th>
-                    <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    {{-- @if(count($clients) > 0)
-                        @foreach($clients AS $eachClient)
-                          <tr>
-                            <td>{{$n++}}</td>
-                            <td>{{$n++}}</td>
-                            <td>
-                            {{$eachClient['client_name']}}<a href="page-users-view.html"></a>
-                            </td>
-                            <td>{{$eachClient['client_type']}}</td>
-                            <td>{{$eachClient['client_status']}}</td>
-                            <td>
-                                <span class="chip green lighten-5">
-                                    {{$eachClient['created_by']}}<span class="green-text"></span>
-                                </span>
-                            </td>
-                            <td>
-                              <span class="chip green lighten-5">
-                                  <span class="green-text">Active</span>
-                              </span>
-                            </td>
-                            <td><a href=""><i class="material-icons">remove_red_eye</i></a></td>
 
-                            <td><a href="{{route('clients.edit', $eachClient['id'])}}"><i class="material-icons">edit</i></a></td>
-
-                            <td><a data-id="{{$eachClient['id']}}" class="waves-effect waves-light modal-trigger mb-2 mr-1 delete-client" href="#delete-modal"><i class="material-icons">delete</i></a></td>
-
-                            <td>{{$eachClient['client_phone']}}</td>
-                            <td>{{$eachClient['client_email']}}</td>
-                            <td>{{$eachClient['client_address']}}</td>
-                          </tr>
-                        @endforeach
-                      @endif --}}
+                    @foreach ($financials as $financial)
+                    <tr>
+                      <td>{{$financial->id}}</td>
+                      <td>{{$financial->project_id}}</td>
+                      <td>{{$financial->shareholder_name->name}}</td>
+                      <td>{{$financial->share_percentage}}</td>
+                      <td>{{$financial->amount}}</td>
                   </tr>
-                  <tr>
-                      <td>Gecko</td>
-                      <td>Seamonkey 1.1</td>
-                      <td>Win 98+ / OSX.2+</td>
-                      <td>1.8</td>
-                      <td>A</td>
-                  </tr>
+                    @endforeach
+                  
 
                   </tbody>
 
