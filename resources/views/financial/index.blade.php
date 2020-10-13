@@ -41,7 +41,7 @@
                   <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Project id</th>
+                    <th>Profit id</th>
                     <th>Shareholder Id</th>
                     <th>Share Percentage</th>
                     <th>Amount</th>
