@@ -13,13 +13,11 @@ class DisburshmentController extends Controller
     {
          $data['title']="List of Disburshment";
          $data['disburshments']=Disburshment::all();
-        
 
          $disburshments = New Disburshment();
         $disburshments = $disburshments->orderBy('id', 'DESC')->paginate(5);
         $data['disburshments']=$disburshments;
         $data['serial']    = 1;
-       
          return view('disburshment.index',$data);
         // return "hello";
     }
@@ -35,7 +33,7 @@ class DisburshmentController extends Controller
     {
         $request->validate([
             'amount'=>'required|regex:/^\d+(\.\d{1,2})?$/',
-            
+
         ]);
         $disburshment= new Disburshment();
         $disburshment->shareholder_id=$request->shareholder_id;
@@ -43,7 +41,7 @@ class DisburshmentController extends Controller
         $disburshment->date=$request->date;
         $disburshment->save();
         return redirect()->route('disburshment.create');
-        
+
     }
 
 
@@ -60,14 +58,14 @@ class DisburshmentController extends Controller
     {
         $request->validate([
             'amount'=>'required|regex:/^\d+(\.\d{1,2})?$/',
-            
+
         ]);
         $disburshment=  Disburshment::find($id);
         $disburshment->amount=$request->amount;
         $disburshment->date=$request->date;
         $disburshment->shareholder_id=$request->shareholder_id;
-   
-       // 
+
+       //
         $disburshment->save();
         return redirect()->route('disburshment.edit',$id);
     }
@@ -75,7 +73,7 @@ class DisburshmentController extends Controller
     public function show($id)
     {
         $disburshment=Disburshment::find($id);
-        
+
         //return $user;
         return view('disburshment.show',compact('disburshment'));
     }

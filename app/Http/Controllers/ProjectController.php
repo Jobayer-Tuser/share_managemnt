@@ -35,7 +35,7 @@ class ProjectController extends Controller
     }
 
     public function store(Request $request){
-        
+
         $validateData = $request->validate([
             'lc_or_tt_date' => 'required',
             'style_number_and_order_session' => 'required',
@@ -80,13 +80,13 @@ class ProjectController extends Controller
         $post->payment_record  = $request->payment_record ;
         $post->profit_share_outstanding  = $request->profit_share_outstanding;
 
-        
+
         $post->save();
-        
-            
-        
+
+
+
          $shareholders=User::all();
-         
+
             foreach($shareholders as $shareholder){
                  $financial= new Financial;
                  $financial->project_id=$post->id;
@@ -95,10 +95,10 @@ class ProjectController extends Controller
                  $financial->amount=($post->profits_shared_with_shareholders/ ($shareholder->total_share))*($shareholder->share);
                  $financial->save();
                 //amount echo ($post->profits_shared_with_shareholders/ ($shareholder->total_share))*($shareholder->share) ." ";
-                // percentage echo ((($post->profits_shared_with_shareholders/ ($shareholder->total_share))*($shareholder->share))*100)/$post->profits_shared_with_shareholders ." ";
+                 //echo ((($post->profits_shared_with_shareholders/ ($shareholder->total_share))*($shareholder->share))*100) ." ";
             }
-        
-        
+
+
         return redirect('/project/create');
 
     }
@@ -163,7 +163,7 @@ class ProjectController extends Controller
                 $post->payment_record  = $request->payment_record ;
                 $post->profit_share_outstanding  = $request->profit_share_outstanding;
 
-               
+
                 $post->save();
                 return redirect('/index');
 
