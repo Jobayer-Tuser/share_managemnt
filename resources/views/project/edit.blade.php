@@ -44,7 +44,7 @@
                         <!-- /.card-body -->
                         <div class="card-footer">
                           <button type="submit" class="btn btn-sm btn-success">Submit</button>
-                          <a href="{{route('project.index')}}" type="submit" class="btn btn-sm btn-danger">Cancle</a>
+                          <a href="{{route('project.index')}}" type="submit" class="btn btn-sm btn-danger">Cancel</a>
                         </div>
                       </form>
                     </div>

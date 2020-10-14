@@ -171,7 +171,7 @@ class ProjectController extends Controller
 
 
                 $post->save();
-                return redirect('/index');
+                return redirect('/project/index');
 
     }
 
