@@ -27,7 +27,7 @@
                with font-awesome or any other icon font library -->
 
           {{-- <li class="nav-item has-treeview @if(Request::segment(1) == 'disburshment' ) active @endif bold "> --}}
-            <li class="nav-item ">
+            <li class="nav-item @if(Request::segment(1) == 'disburshment' && Request::segment(2)=='index' ||Request::segment(1) == 'disburshment' && Request::segment(2)=='create' ) menu-open @endif bold">
 
             <a href="#" class="nav-link " href="JavaScript:void(0)">
               <i class="nav-icon fas fa-tachometer-alt"></i>
