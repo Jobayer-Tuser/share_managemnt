@@ -7,7 +7,7 @@
   <!-- DataTables -->
   <link rel="stylesheet" href=" {{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
   <link rel="stylesheet" href=" {{asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
-<style>
+<!-- <style>
   table.dataTable thead>tr>th.sorting_asc,
   table.dataTable thead>tr>th.sorting_desc,
   table.dataTable thead>tr>th.sorting,
@@ -17,7 +17,7 @@
     padding-right: 16px !important;
     padding-left: 7px;
 }
-</style>
+</style> -->
 @endpush
 
 <!-- BEGIN: Page Main-->
