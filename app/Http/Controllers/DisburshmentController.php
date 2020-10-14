@@ -69,7 +69,7 @@ class DisburshmentController extends Controller
 
        //
         $disburshment->save();
-        return redirect()->route('disburshment.edit',$id);
+        return redirect()->route('disburshment.index');
     }
 
     public function show($id)

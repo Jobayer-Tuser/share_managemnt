@@ -37,4 +37,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function total_receivable(){
+        return $this->hasMany('App\Models\Financial','shareholder_id');
+    }
+    public function total_paid(){
+        return $this->hasMany('App\Models\Disburshment','shareholder_id');
+    }
 }

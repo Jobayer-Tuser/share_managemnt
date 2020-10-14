@@ -45,6 +45,8 @@
                     <th>Email</th>
                     <th>Total Share</th>
                     <th>Share</th>
+                    <th>Total Receivable</th>
+                    <th>Total Paid</th>
                     <th>Created By</th>
                     <th>Updated By</th>
                     <th>Action</th>
@@ -59,6 +61,8 @@
                       <td>{{$user->email}}</td>
                       <td>{{$user->total_share}}</td>
                       <td>{{$user->share}}</td>
+                      <td>{{$user->total_receivable}}</td>
+                      <td>{{$user->total_paid}}</td>
                       <td>{{ $user->created_by ?$user->created_by :"-----" }}</td>
                       <td>{{$user->updated_by ? $user->updated_by :"-----"}}</td>
                       <td><a href="{{route('user.edit',$user->id)}}" class="btn btn-xs btn-warning">Edit</a>
@@ -77,9 +81,9 @@
 
               <!-- /.card-body -->
             </div>
-            <div class="d-flex justify-content-center">
-              {!! $users->links() !!}
-             </div>
+            {{-- <div class="d-flex justify-content-center">
+              {!! $users->render() !!}
+             </div> --}}
             <!-- /.card -->
           </div>
           <!-- /.col -->

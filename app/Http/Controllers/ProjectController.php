@@ -36,7 +36,6 @@ class ProjectController extends Controller
     }
 
     public function store(Request $request){
-
         $validateData = $request->validate([
             'lc_or_tt_date' => 'required',
             'style_number_and_order_session' => 'required',
@@ -101,15 +100,15 @@ class ProjectController extends Controller
             }
 
 
-        return redirect('/project/create');
-
+            return redirect()->route('project.index');
     }
 
 
     public function show($id){
         $title = "Projects Details";
         $project = Project::find($id);
-        return view('project.show')->with(['project'=> $project, 'title'=>$title]);
+        $shareholders=Financial::where('project_id',$id)->get();
+        return view('project.show')->with(['project'=> $project,'shareholders'=> $shareholders, 'title'=>$title]);
     }
 
     public function edit($id)

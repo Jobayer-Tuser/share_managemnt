@@ -3,19 +3,33 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Financial;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
     public function index()
     {
+        
+
+
+        
+        
+        $users=User::all();
+        foreach($users as $user)
+        {
+            $user->total_receivable= User::find($user->id)->total_receivable->sum('amount');
+            $user->total_paid=User::find($user->id)->total_paid->sum('amount');
+        }
+        
         $data['title']="List of Shareholders";
-        $users = New User();
-        $users = $users->orderBy('id', 'DESC')->simplePaginate(5);
+        //$users = $users->orderBy('id', 'DESC')->paginate(10);
         $data['users']=$users;
         $data['serial']    = 1;
+        
+
         return view('user.index',$data);
     }
 

@@ -15,4 +15,7 @@ class Financial extends Model
     public function lc_number(){
         return $this->belongsTo('App\Models\Project','project_id');
     }
+    public function total_amount(){
+        return $this->belongsTo('App\Models\User','shareholder_id');
+    }
 }
