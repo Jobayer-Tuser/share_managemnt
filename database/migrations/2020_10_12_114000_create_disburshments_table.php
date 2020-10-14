@@ -15,10 +15,11 @@ class CreateDisburshmentsTable extends Migration
     {
         Schema::create('disburshments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreign('shareholder_id')->references('id')->on('users');
+            $table->foreign('shareholder_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('restrict');
             $table->unsignedBigInteger('shareholder_id');
             $table->float('amount');
             $table->date('date');
+            $table->string('remark');
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();
             $table->timestamps();
