@@ -25,8 +25,6 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
-          //<li class="nav-item has-treeview @if(Request::segment(1) == 'disburshment' ) active @endif bold ">
             <li class="nav-item ">
 
             <a href="#" class="nav-link " href="JavaScript:void(0)">
