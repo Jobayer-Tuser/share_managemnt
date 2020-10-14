@@ -100,6 +100,21 @@
                       </li>
 
 
+                      
+                      <li class="list-group-item">
+                        <b> Created By:</b> <a class="float-right"> {{$project['created_by'] }}</a>
+                      </li>
+                      <li class="list-group-item">
+                        <b> Updated By:</b> <a class="float-right"> {{$project['updated_by'] ?$project['updated_by'] :"-----" }}</a>
+                      </li>
+                      <li class="list-group-item">
+                        <b> Created At:</b> <a class="float-right"> {{$project['created_at']}}</a>
+                      </li>
+                      <li class="list-group-item">
+                        <b> Updated At:</b> <a class="float-right"> {{$project['updated_at']}}</a>
+                      </li>
+
+
 
 
                     </ul>

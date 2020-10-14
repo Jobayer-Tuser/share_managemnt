@@ -52,10 +52,10 @@
                     <th>Serial</th>
                     <th>LC/TT Date</th>
                     <th>Style Number & Order Session</th>
-                    <th>LC number</th>
-                    <th>LC value</th>
-                    <th>Forwarded LC value</th>
+                    <th>Profit Share With Shareholder</th>
                     <th>Total profit margin</th>
+                    <th>Created By</th>
+                    <th>Updated By</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -65,11 +65,11 @@
                           <tr>
                             <td>{{$serial++}}</td>
                             <td>{{$eachProject['lc_or_tt_date']}}</td>
-                            <td>{{$eachProject['style_number_and_order_session']}}</td>
-                            <td>{{$eachProject['lc_number']}}</td>
-                            <td>{{$eachProject['lc_value']}}</td>
-                            <td>{{$eachProject['forward_lc_value']}}</td>
+                            <td>{{$eachProject['style_number_and_order_session']}}</td>                     
+                            <td>{{$eachProject['profits_shared_with_shareholders']}}</td>
                             <td>{{$eachProject['total_profit_margin']}}</td>
+                            <td>{{$eachProject['created_by'] ?$eachProject['created_by'] : "-----"}}</td>
+                            <td>{{$eachProject['updated_by'] ? $eachProject['updated_by']: "-----"}}</td>
                             <td>
                                 <a  href=" {{route('project.edit', $eachProject['id'])}} " class="btn btn-warning btn-xs">Edit</a>
                                 <a data-target="{{$eachProject['id']}}" class="btn btn-xs btn-default" href=" {{route('project.show', $eachProject['id'])}}">Details</a>
