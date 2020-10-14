@@ -38,7 +38,7 @@
                         @include('project._form')
                         <!-- /.card-body -->
                         <div class="card-footer">
-                          <a href="{{route('project.index')}}" type="submit" class="btn btn-xs btn-success">Submit</a>
+                          <button type="submit" class="btn btn-xs btn-success">Submit</button>
                           <a href="{{route('project.index')}}" class="btn btn-xs btn-danger">Cancle</a>
                         </div>
                       </form>

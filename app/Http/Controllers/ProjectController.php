@@ -36,7 +36,6 @@ class ProjectController extends Controller
     }
 
     public function store(Request $request){
-
         $validateData = $request->validate([
             'lc_or_tt_date' => 'required',
             'style_number_and_order_session' => 'required',
@@ -101,8 +100,7 @@ class ProjectController extends Controller
             }
 
 
-        return redirect('/project/create');
-
+            return redirect()->route('project.index');
     }
 
 
