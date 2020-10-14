@@ -10,7 +10,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{'dashboard.dashboard'}}">Home</a></li>
               <li class="breadcrumb-item active">Disburshment details  </li>
             </ol>
           </div>
@@ -22,6 +22,8 @@
     <section class="content">
       <div class="container-fluid">
         <div class="row">
+            <div class="col-md-3">
+            </div>
           <div class="col-md-6 align-center">
             <!-- Profile Image -->
             <div class="card card-primary card-outline">
@@ -49,9 +51,11 @@
               </div>
               <!-- /.card-body -->
             </div>
-            </div>
-            </div>
-            </div>
+          </div>
+            <div class="col-md-3">
+              <div>
+        </div>
+    </div>
 </section>
 
 

@@ -16,7 +16,7 @@
         </ol>
       </div>
     </div>
-  </div><!-- /.container-fluid -->
+  </div>
 </section>
 
 
@@ -24,6 +24,8 @@
 <section class="content">
   <div class="container-fluid">
     <div class="row">
+        <div class="col-md-3">
+        </div>
       <div class="col-md-6 align-center">
 
         <div class="card card-primary card-outline">
@@ -55,9 +57,12 @@
 
             <a href="{{route('user.index')}}" class="btn btn-primary btn-block align-center">Go back</a>
           </div>
+
           <!-- /.card-body -->
         </div>
         </div>
+        <div class="col-md-3">
+        <div>
       </div>
     </div>
 </section>
