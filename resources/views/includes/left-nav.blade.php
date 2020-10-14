@@ -26,7 +26,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-            <li class="nav-item @if(Request::segment(1) == 'disburshment' && Request::segment(2)=='index' ||Request::segment(1) == 'disburshment' && Request::segment(2)=='create' ) menu-open @endif bold">
+            <li class="nav-item @if(Request::segment(1) == 'disburshment' && Request::segment(2)=='index' ||Request::segment(1) == 'disburshment' && Request::segment(2)=='create' ||Request::segment(1) == 'disburshment' && Request::segment(2)=='edit' ) menu-open @endif bold">
 
 
             <a href="#" class="nav-link " href="JavaScript:void(0)">
