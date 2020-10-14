@@ -61,7 +61,7 @@
                             <td>
                                 <a  href=" {{route('project.edit', $eachProject['id'])}} " class="btn btn-warning btn-xs">Edit</a>
                                 <a data-target="{{$eachProject['id']}}" class="btn btn-xs btn-default" href=" {{route('project.show', $eachProject['id'])}}">Details</a>
-
+                              
                             </td>
                           </tr>
                         @endforeach
@@ -69,6 +69,7 @@
                   </tbody>
                 </table>
               </div>
+           
               <!-- /.card-body -->
             </div>
             <div class="d-flex justify-content-center">
