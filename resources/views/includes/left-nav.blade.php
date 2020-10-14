@@ -26,8 +26,10 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-          <li class="nav-item has-treeview ">
-            <a href="#" class="nav-link">
+          //<li class="nav-item has-treeview @if(Request::segment(1) == 'disburshment' ) active @endif bold ">
+            <li class="nav-item ">
+
+            <a href="#" class="nav-link " href="JavaScript:void(0)">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>Disburshment
                 <i class="right fas fa-angle-left"></i>
@@ -35,13 +37,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('disburshment.index')}} " class="nav-link ">
+                <a href="{{route('disburshment.index')}} " class="nav-link @if(Request::segment(1) == 'disburshment' && Request::segment(2)=='index' ) active @endif bold" >
                   <i class="far fa-circle nav-icon"></i>
                   <p>Disburshment List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href=" {{route('disburshment.create')}} " class="nav-link">
+                <a href=" {{route('disburshment.create')}} " class="nav-link @if(Request::segment(1) == 'disburshment' && Request::segment(2)=='create' ) active @endif bold">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Disburshment</p>
                 </a>
@@ -77,13 +79,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('project.index')}} " class="nav-link ">
+                <a href="{{route('project.index')}} " class="nav-link @if(Request::segment(1) == 'project' && Request::segment(2)=='index' ) active @endif bold">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Project List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href=" {{route('project.create')}} " class="nav-link">
+                <a href=" {{route('project.create')}} " class="nav-link @if(Request::segment(1) == 'project' && Request::segment(2)=='create' ) active @endif bold">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Project</p>
                 </a>
@@ -101,13 +103,13 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="{{route('user.index')}} " class="nav-link ">
+              <a href="{{route('user.index')}} " class="nav-link @if(Request::segment(1) == 'user' && Request::segment(2)=='index' ) active @endif bold">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Shareholder List</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href=" {{route('user.create')}} " class="nav-link">
+              <a href=" {{route('user.create')}} " class="nav-link @if(Request::segment(1) == 'user' && Request::segment(2)=='create' ) active @endif bold">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Add Shareholder</p>
               </a>
