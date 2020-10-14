@@ -45,7 +45,6 @@
                 <table id="example2" class="table table-bordered table-hover">
                     <thead>
                         <tr>
-
                             <th>Serial</th>
                             <th>Shareholder Name</th>
                             <th>Amount</th>

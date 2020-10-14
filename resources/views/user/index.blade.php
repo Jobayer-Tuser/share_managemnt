@@ -61,21 +61,20 @@
                       <td>{{$user->share}}</td>
                       <td>{{ $user->created_by ?$user->created_by :"-----" }}</td>
                       <td>{{$user->updated_by ? $user->updated_by :"-----"}}</td>
-                      <td><a href="{{route('user.edit',$user->id)}}" class="btn btn-xs btn-warning">Edit</a> <a href="#" class="btn btn-xs btn-danger">Delete</a> <a class='btn btn-xs btn-default' href="{{route('user.show',$user->id)}}"> See more</a></td>
-                      
-                      
-                      
+                      <td><a href="{{route('user.edit',$user->id)}}" class="btn btn-xs btn-warning">Edit</a>
+                           <a class='btn btn-xs btn-default' href="{{route('user.show',$user->id)}}"> See more</a>
+                      </td>
                   </tr>
                     @endforeach
-                    
+
 
 
                   </tbody>
 
                 </table>
-                
+
               </div>
-              
+
               <!-- /.card-body -->
             </div>
             <div class="d-flex justify-content-center">
@@ -86,10 +85,10 @@
           <!-- /.col -->
         </div>
         <!-- /.row -->
-        
+
       </div>
       <!-- /.container-fluid -->
-      
+
     </section>
 
 
@@ -148,5 +147,5 @@
 
           </script>
     @endpush
-    
+
 @endsection

@@ -24,14 +24,14 @@ class ProjectController extends Controller
         $data['title']="List of projects";
 
         $projects = New Project();
-        $projects = $projects->orderBy('id', 'DESC')->simplePaginate(5);
+        $projects = $projects->orderBy('id', 'DESC')->get();
         $data['projects']=$projects;
         $data['serial']    = 1;
         return view('project.index',$data);
     }
     public function create()
     {
-        $data['title']="Add New Profit";
+        $data['title']="Add New Project";
         return view('project.create', $data);
     }
 
