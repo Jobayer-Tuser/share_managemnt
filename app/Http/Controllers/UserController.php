@@ -11,11 +11,13 @@ class UserController extends Controller
 {
     public function index()
     {
+        
         $data['title']="List of Shareholders";
         $users = New User();
         $users = $users->orderBy('id', 'DESC')->paginate(10);
         $data['users']=$users;
         $data['serial']    = 1;
+        return $data['users'];
         return view('user.index',$data);
     }
 
