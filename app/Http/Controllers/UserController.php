@@ -43,7 +43,7 @@ class UserController extends Controller
     {
         $request->validate([
             'name'=>'required|unique:users|string',
-            'email'=>'required',
+            'email'=>'required|unique:users',
             'password'=>'min:6|required_with:confirm_password|same:confirm_password',
             'confirm_password'=>'min:6',
             'share'=>'required|regex:/^\d+(\.\d{1,2})?$/',

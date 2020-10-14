@@ -69,43 +69,14 @@
                               <a class="btn btn-xs btn-default" href="{{route('disburshment.show',$disburshment->id)}}"> See more</a></td>
                           </tr>
                             @endforeach
-
-
                     </tbody>
-
                 </table>
               </div>
-              <!-- /.card-body -->
             </div>
-            <!-- /.card -->
           </div>
-          <!-- /.col -->
         </div>
-        <!-- /.row -->
       </div>
-      <!-- /.container-fluid -->
     </section>
-    <!-- /.content -->
-
-
-
-{{-- <div id="delete-modal" class="modal">
-<div class="modal-content">
-  <h4>Delete Client</h4>
-  <p>Are Sure To Delete This Clients From your List</p>
-</div>
-<div class="modal-footer">
-
-    <form method="post" action="#">
-      {{@csrf_field()}}
-      {{method_field('delete')}}
-      <input type="hidden" id="id" name="id" name="_method" value="" />
-      <a href="#!"  class="modal-action modal-close waves-effect waves-red btn-flat ">Disagree</a>
-      <button type="submit" class="modal-action btn modal-close waves-effect waves-green btn-flat ">Agree</button>
-    </form>
-
-</div>
-</div> --}}
 
 
     @push('script')
@@ -115,10 +86,6 @@
         <script src=" {{asset('plugins/datatables-responsive/js/dataTables.responsive.min.js')}} "></script>
         <script src=" {{asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}} "></script>
         <!-- AdminLTE App -->
-          <!-- END PAGE VENDOR JS-->
-
-
-
           <!-- Script for Modal Delete -->
           <script>
             $('.delete-client').click(function(){
@@ -141,9 +108,7 @@
               "responsive": true,
             });
           });
-
-          </script>
-
+        </script>
     @endpush
 
 

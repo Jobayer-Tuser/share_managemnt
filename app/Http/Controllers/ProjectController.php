@@ -108,7 +108,11 @@ class ProjectController extends Controller
         $title = "Projects Details";
         $project = Project::find($id);
         $shareholders=Financial::where('project_id',$id)->get();
-        return view('project.show')->with(['project'=> $project,'shareholders'=> $shareholders, 'title'=>$title]);
+        return view('project.show')->with([
+            'project'=> $project,
+            'shareholders'=> $shareholders,
+            'title'=>$title
+        ]);
     }
 
     public function edit($id)
