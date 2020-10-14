@@ -106,7 +106,7 @@
                           <tr>
                             <td>{{$shareholder->shareholder_name->name}}</td>
                             <td>{{$shareholder->amount}}</td>
-                            <td>{{$shareholder->share_percentage}}</td>
+                            <td>{{$shareholder->share_percentage}} %</td>
             
                           </tr>
                         @endforeach

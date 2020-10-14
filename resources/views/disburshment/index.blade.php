@@ -148,7 +148,5 @@
 
 
 
-     <div class="d-flex justify-content-center">
-      {!! $disburshments->links() !!}
-     </div>
+
 @endsection
