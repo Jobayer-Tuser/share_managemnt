@@ -7,7 +7,17 @@
   <!-- DataTables -->
   <link rel="stylesheet" href=" {{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
   <link rel="stylesheet" href=" {{asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
-  <!-- Theme style -->
+<style>
+  table.dataTable thead>tr>th.sorting_asc,
+  table.dataTable thead>tr>th.sorting_desc,
+  table.dataTable thead>tr>th.sorting,
+  table.dataTable thead>tr>td.sorting_asc,
+  table.dataTable thead>tr>td.sorting_desc,
+   table.dataTable thead>tr>td.sorting {
+    padding-right: 16px !important;
+    padding-left: 7px;
+}
+</style>
 @endpush
 
 <!-- BEGIN: Page Main-->
@@ -66,54 +76,22 @@
                       <td>{{ $user->created_by ?$user->created_by :"-----" }}</td>
                       <td>{{$user->updated_by ? $user->updated_by :"-----"}}</td>
                       <td><a href="{{route('user.edit',$user->id)}}" class="btn btn-xs btn-warning">Edit</a>
-                           <a class='btn btn-xs btn-default' href="{{route('user.show',$user->id)}}"> See more</a>
+                           <a class='btn btn-xs btn-default' href="{{route('user.show',$user->id)}}">Details</a>
                       </td>
                   </tr>
                     @endforeach
-
-
-
                   </tbody>
-
                 </table>
-
               </div>
-
-              <!-- /.card-body -->
             </div>
             {{-- <div class="d-flex justify-content-center">
               {!! $users->render() !!}
              </div> --}}
-            <!-- /.card -->
           </div>
-          <!-- /.col -->
+
         </div>
-        <!-- /.row -->
-
       </div>
-      <!-- /.container-fluid -->
-
     </section>
-
-
-{{-- <div id="delete-modal" class="modal">
-<div class="modal-content">
-  <h4>Delete Client</h4>
-  <p>Are Sure To Delete This Clients From your List</p>
-</div>
-<div class="modal-footer">
-
-    <form method="post" action="#">
-      {{@csrf_field()}}
-      {{method_field('delete')}}
-      <input type="hidden" id="id" name="id" name="_method" value="" />
-      <a href="#!"  class="modal-action modal-close waves-effect waves-red btn-flat ">Disagree</a>
-      <button type="submit" class="modal-action btn modal-close waves-effect waves-green btn-flat ">Agree</button>
-    </form>
-
-</div>
-</div> --}}
-
 
      @push('script')
         <!-- DataTables -->
@@ -121,12 +99,7 @@
         <script src=" {{asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}} "></script>
         <script src=" {{asset('plugins/datatables-responsive/js/dataTables.responsive.min.js')}} "></script>
         <script src=" {{asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}} "></script>
-        <!-- AdminLTE App -->
-          <!-- END PAGE VENDOR JS-->
 
-
-
-          <!-- Script for Modal Delete -->
           <script>
             $('.delete-client').click(function(){
                 let id = $(this).attr('data-id');

@@ -35,7 +35,7 @@ Route::get('/list', function () {
 
 
         //project
-        Route::get('/index', [ProjectController::class, 'index'])->name('project.index');
+        Route::get('/project/index', [ProjectController::class, 'index'])->name('project.index');
         Route::get('/project/create', [ProjectController::class, 'create'])->name('project.create');
         Route::post('/project/store', [ProjectController::class, 'store'])->name('project.store');
         Route::get('/project/edit/{id}', [ProjectController::class, 'edit'])->name('project.edit');
