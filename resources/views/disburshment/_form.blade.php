@@ -17,6 +17,10 @@
         <label for="">Date</label>
         <input type="date" name="date" class="form-control" id="date" placeholder="Enter date" required value="{{ old('date',isset($data) ? $data->date :null) }}">
       </div>
+      <div class="form-group col-md-6">
+        <label for="">Remark</label>
+        <input type="text" name="remark" class="form-control" id="remark" placeholder="check number, voucher number" required value="{{ old('date',isset($data) ? $data->remark :null) }}">
+      </div>
   </div>
 </div>
 

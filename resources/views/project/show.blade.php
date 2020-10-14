@@ -36,7 +36,7 @@
                     </div>
 
 
-                    <p class="text-muted text-center">Shareholder Project Details. <br> ID: {{$project['id']}} </p>
+                    <p class="text-muted text-center"> <strong>Shareholder Project Details.</strong>   </p>
 
                     <ul class="list-group list-group-unbordered mb-3">
 

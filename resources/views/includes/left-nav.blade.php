@@ -26,8 +26,13 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
+<<<<<<< HEAD
           {{-- <li class="nav-item has-treeview @if(Request::segment(1) == 'disburshment' ) active @endif bold "> --}}
             <li class="nav-item ">
+=======
+            <li class="nav-item @if(Request::segment(1) == 'disburshment' && Request::segment(2)=='index' ||Request::segment(1) == 'disburshment' && Request::segment(2)=='create' ||Request::segment(1) == 'disburshment' && Request::segment(2)=='edit' ) menu-open @endif bold">
+
+>>>>>>> 5411b5375e98ddd6819e57dc96b9fa53b130d310
 
             <a href="#" class="nav-link " href="JavaScript:void(0)">
               <i class="nav-icon fas fa-tachometer-alt"></i>
